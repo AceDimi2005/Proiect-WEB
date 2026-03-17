@@ -1,0 +1,115 @@
+$null: 0;
+ul.meniu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.meniu>li {
+    flex: 1;
+    text-align: center;
+    background-color: rgb(150, 135, 200);
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+ul.meniu>li>a {
+    display: block;
+    padding: 12px 10px;
+    color: black;
+    text-decoration: none;
+    transition: all 1s linear;
+    width: 100%;
+    height: 100%;
+}
+
+#tab-orar{
+    width: 100%;   
+}
+
+%nu_afiseaza {
+    display: none;
+}
+#hamburger{
+    @extend %nu_afiseaza;
+}
+
+@keyframes animatie_submeniu {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0, 0);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateY(-5px) scale(0.5, 0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1, 1);
+    }
+}
+
+nav {
+    --latime-buton: 120px;
+}
+
+ul.meniu ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: rgb(180, 170, 220);
+
+}
+
+ul.meniu>li:hover>ul {
+    display: block;
+    animation: animatie_submeniu 0.4s ease forwards;
+}
+
+ul.meniu ul li a {
+    display: block;
+    padding: 8px 10px;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s linear;
+}
+
+ul.meniu ul li:hover {
+    background-color: var(--border-color);
+}
+
+ul.meniu ul li:hover a {
+    color: white;
+}
+
+.taburi-iframe li {
+    width: var(--latime-buton);
+    height: var(--inaltime-buton);
+    flex-wrap: wrap;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    transition: all 1s linear;
+    font-weight: bold;
+}
+
+ul.meniu>li:hover {
+    background-color: var(--border-color);
+    color: white;
+}
+
+ul.meniu>li>a:hover {
+    color: white;
+}
+
+ul.meniu a {
+    color: black;
+    text-decoration: none;
+}

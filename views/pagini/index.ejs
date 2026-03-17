@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head> 
+    <title>TechForge</title>
+    <meta name="description"
+        content="Calculatoare personalizate, componente de ultimă generație și laptopuri performante pentru gaming și birou. Descoperă tehnologia de vârf la TechForge!">
+    <meta name="keywords"
+        content="magazin IT, componente PC, calculatoare gaming, laptopuri performante, TechForge, PC, sisteme preasamblate, setup gaming, periferice, tehnologie, sisteme custom">
+    <%-  include("../fragmente/head.ejs")%>
+</head>
+
+<body id="top">
+    <%-include("../fragmente/header.ejs")%>
+    <main> 
+
+        <div id="grid-pagina">
+
+            <section id="welcome">
+                <hgroup>
+                    <h2>Bine ați venit</h2>
+                    <p class="subtitlu">Prezentarea magazinului</p>
+                </hgroup>
+
+                <p class="intro"><b>TechForge</b> este <em>magazinul IT</em> unde găsești <em>componente PC</em>,
+                    <em>calculatoare gaming</em>, <em>laptopuri performante</em> și <em>periferice</em> de top.
+                    Descoperiți cele mai noi tehnologii și configurați sistemul perfect pentru nevoile dvs.!</p>
+
+                <div class="intro-oferte">
+                    <div>Componente PC</div>
+                    <div>PC Gaming</div>
+                    <div>Laptopuri</div>
+                    <div>Periferice</div>
+                    <div>Monitoare</div>
+                </div>
+                <p class="anunt intro">Fie că doriți un <em>setup gaming</em> complet, <em>sisteme preasamblate</em>
+                    pentru birou sau <em>sisteme custom</em> unice, puteți achiziționa produsele atât din showroom-ul
+                    nostru, cât și online, cu livrare rapidă prin curier în toată țara.</p>
+                <div id="dv-prezentare-1">
+                    <div id="dv-prezentare">
+                        <figure>
+                            <picture>
+                                <source srcset="/resurse/imagini/poze/setup-mic.PNG" media="(max-width:700px)" />
+                                <source srcset="/resurse/imagini/poze/setup-mediu.PNG" media="(max-width:1200px)" />
+                                <img src="/resurse/imagini/poze/setup-mare.PNG"
+                                    alt="Setup TechForge cu sisteme gaming și componente PC expuse"
+                                    title="Setup-ul principal TechForge din București" />
+                            </picture>
+                            <figcaption>Showroom-ul TechForge - Vino să testezi configurațiile noastre!</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+            </section>
+            <section id="orar">
+                <h2>Orar</h2>
+                <div class="tabel-scroll">
+                    <table id="tab-orar">
+                        <caption>Programul de funcționare al showroom-ului TechForge</caption>
+                        <thead>
+                            <tr>
+                                <th>Perioadă</th>
+                                <th>Zi</th>
+                                <th>Deschidere</th>
+                                <th>Pauză</th>
+                                <th>Închidere</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="5">Zile<br />Lucrătoare</td>
+                                <td>Luni</td>
+                                <td>10:00</td>
+                                <td>12:00-14:00</td>
+                                <td>20:00</td>
+                            </tr>
+                            <tr>
+                                <td>Marți</td>
+                                <td>09:00</td>
+                                <td>12:00-14:00</td>
+                                <td>21:00</td>
+                            </tr>
+                            <tr>
+                                <td>Miercuri</td>
+                                <td>09:00</td>
+                                <td>11:00-13:00</td>
+                                <td>21:00</td>
+                            </tr>
+                            <tr>
+                                <td>Joi</td>
+                                <td>09:00</td>
+                                <td>11:00-13:00</td>
+                                <td>21:00</td>
+                            </tr>
+                            <tr>
+                                <td>Vineri</td>
+                                <td>09:00</td>
+                                <td>12:00-14:00</td>
+                                <td>19:00</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Weekend</td>
+                                <td>Sâmbătă</td>
+                                <td>10:00</td>
+                                <td>12:00-13:00</td>
+                                <td>16:00</td>
+                            </tr>
+                            <tr>
+                                <td>Duminică</td>
+                                <td>10:00</td>
+                                <td>-</td>
+                                <td>14:00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5">Showroom-ul este închis în zilele de sărbători legale. Pentru comenzi
+                                    online, suntem disponibili 24/7!</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <p><strong>Atenție!</strong> În prima zi a lunii facem inventar și showroom-ul se deschide la ora 12:00.
+                </p>
+            </section>
+
+            <section id="zona5-utilizatori">
+                <h2>Utilizatori online</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet placerat sem.</p>
+                <ul>
+                    <li>Utilizator_01</li>
+                    <li>Utilizator_17</li>
+                    <li>Utilizator_32</li>
+                    <li>Utilizator_44</li>
+                </ul>
+            </section>
+
+            <section id="index-intrebari">
+                <h2>Întrebări frecvente</h2>
+                <details>
+                    <summary>Ce garanție oferă produsele dumneavoastră?</summary>
+                    <p>Toate produsele beneficiază de garanție producător între 2 și 5 ani, în funcție de categoria
+                        produsului.</p>
+                </details>
+                <details>
+                    <summary>Cât durează livrarea comenzilor?</summary>
+                    <p>Livrarea se face în 1-3 zile lucrătoare pentru produsele în stoc, cu posibilitate de livrare
+                        express în 24h.</p>
+                </details>
+                <details>
+                    <summary>Oferiți servicii de asamblare PC?</summary>
+                    <p>Da! Echipa noastră de tehnicieni poate asambla și testa configurația dorită, cu montare
+                        profesională și cable management.</p>
+                </details>
+                <details>
+                    <summary>Pot returna un produs dacă nu sunt mulțumit?</summary>
+                    <p>Aveți dreptul de retur în 14 zile conform legislației, cu condiția ca produsul să fie în stare
+                        originală, nefolosit.</p>
+                </details>
+            </section>
+
+            <section id="zona8">
+                <h2>Zona 8 - Conținut extins</h2>
+                <section id="promotii">
+                    <h3>Promoții și oferte</h3>
+                    <blockquote>
+                        <p>„La TechForge, fiecare configurație este construită cu pasiune și atenție la detalii."</p>
+                        <cite>— Echipa TechForge</cite>
+                    </blockquote>
+                    <article>
+                        <h4 class="titlu">Super ofertă de weekend</h4>
+                        <p><b>TechForge</b> oferă <b>reduceri de <s>10%</s> <ins>15%</ins></b> pentru toate componentele
+                            PC cumpărate în weekend.</p>
+                        <p>Oferta este valabilă doar în zilele de sâmbătă și duminică în magazinele <abbr
+                                title="TechForge">TF</abbr>.</p>
+                        <p>În cazul în care cumpărați componente de peste 2000 RON, primiți un card de fidelitate
+                            <b>TechForge Premium</b>!</p>
+                    </article>
+                    <article>
+                        <h4>Ofertă pachet PC Gaming</h4>
+                        <p>TechForge oferă pachete complete cuprinzând:</p>
+                        <ol>
+                            <li>Procesor <i lang="en">Intel Core i7</i> sau <i lang="en">AMD Ryzen 7</i></li>
+                            <li>Placă video dedicată RTX sau RX</li>
+                            <li>16GB Memorie RAM DDR5</li>
+                            <li>SSD NVMe 1TB</li>
+                            <li>Gratis: Tastatură mecanică RGB</li>
+                            <li>Gratis: Mouse gaming 16000 DPI</li>
+                            <li>Gratis: Mousepad XL cu logo TechForge</li>
+                        </ol>
+                    </article>
+                    <article>
+                        <h4>Black Friday - Oferte Speciale</h4>
+                        <p>Noi punem pasiune în fiecare configurație!</p>
+                        <p>Pregătim cele mai bune oferte pentru sezonul reducerilor:</p>
+                        <ol>
+                            <li>Reduceri de până la 40% la plăcile video din generația actuală</li>
+                            <li>Pachete bundle: Procesor + Placă de bază + RAM la prețuri imbatabile</li>
+                            <li>Transport gratuit pentru comenzile peste 500 RON</li>
+                        </ol>
+                    </article>
+                    <article>
+                        <h4>Oferte de Anul Nou</h4>
+                        <p>La începutul fiecărui an vă faceți planuri să vă upgrade-uiți setup-ul. De data aceasta chiar o
+                            puteți face! Profitați de reducerile noastre de început de an pentru a vă construi
+                            configurația visurilor, fie pentru gaming, productivitate sau creație de conținut.</p>
+                    </article>
+                </section>
+
+                <section id="produse">
+                    <h3>Produsele noastre</h3>
+                    <p>Vă oferim o gamă completă de <em>componente PC</em> și sisteme pentru orice buget și necesitate.
+                        De la <em>calculatoare gaming</em> de performanță până la <em>laptopuri performante</em> pentru
+                        profesioniști.</p>
+                    <section>
+                        <h4>Componente PC</h4>
+                        <p>Construiește-ți configurația perfectă cu <em>componente PC</em> de ultimă generație, ideale
+                            pentru orice <em>setup gaming</em> sau stație de lucru!</p>
+                        <p>Avem în stoc:</p>
+                        <ul>
+                            <li>Procesoare (CPU) - Intel și AMD</li>
+                            <li>Plăci video (GPU) - NVIDIA și AMD</li>
+                            <li>Plăci de bază - toate chipset-urile</li>
+                            <li>Memorie RAM - DDR4 și DDR5</li>
+                            <li>SSD-uri și HDD-uri</li>
+                            <li>Surse și carcase</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Sisteme și Laptopuri</h4>
+                        <p>Oferim <em>sisteme preasamblate</em>, <em>sisteme custom</em> și
+                            <em>laptopuri performante</em> pentru toate nevoile!</p>
+                        <p>Categorii disponibile:</p>
+                        <ul>
+                            <li><em>PC Gaming</em> - calculatoare gaming cu configurații high-end</li>
+                            <li>PC Office - calculatoare pentru productivitate și birou</li>
+                            <li>Laptopuri Gaming - performanță portabilă</li>
+                            <li>Ultrabook-uri - subțiri și elegante</li>
+                            <li>Laptopuri Business - durabile și sigure</li>
+                            <li>Workstation-uri - pentru profesioniști</li>
+                            <li>Mini PC-uri - compacte și eficiente</li>
+                            <li>All-in-One - design minimalist</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Periferice</h4>
+                        <p>Completează-ți setup-ul cu periferice de calitate:</p>
+                        <ul>
+                            <li>Tastaturi mecanice și membrane</li>
+                            <li>Mouse-uri gaming și office</li>
+                            <li>Monitoare - de la Full HD la 4K</li>
+                            <li>Căști și echipamente audio</li>
+                            <li>Webcam-uri și microfoane pentru streaming</li>
+                        </ul>
+                        <p>Pentru mai multe informații despre componente PC, vizitează <a
+                                href="https://www.pcgarage.ro" target="_blank" rel="noopener">PC Garage</a> - unul
+                            dintre cele mai mari magazine IT din România.</p>
+                    </section>
+                </section>
+
+            </section>
+
+            <section id="anunturi">
+                <h2 class="fg-img">Anunțuri</h2>
+                <p><time datetime="2026-02-15">15 februarie 2026</time> Am primit stoc nou de plăci video RTX 50 Series!
+                </p>
+                <p><time datetime="2026-01-20">20 ianuarie 2026</time> <strong>Deschidere showroom nou în
+                        București!</strong></p>
+
+                <p><time datetime="2025-11-25">25 noiembrie 2025</time> <span>Black Friday - reduceri de până la
+                        50%</span></p>
+                <p><time datetime="2025-09-10">10 septembrie 2025</time> <span>Am adăugat laptopuri din noua generație
+                        în catalog</span></p>
+                <p><time datetime="2025-07-05">5 iulie 2025</time> Stoc nou de procesoare AMD Ryzen 9000 Series</p>
+                <p><time datetime="2025-05-15">15 mai 2025</time> Am lansat serviciul de asamblare PC personalizat</p>
+                <p><time datetime="2025-03-20">20 martie 2025</time> Colaborare nouă cu producători de periferice gaming
+                </p>
+                <p><time datetime="2025-01-10">10 ianuarie 2025</time> Am extins garanția la 3 ani pentru toate
+                    sistemele preasamblate</p>
+                <p><time datetime="2025-01-01">1 ianuarie 2025</time> Un an nou fericit din partea echipei TechForge!
+                </p>
+                <p><time datetime="2024-12-01">1 decembrie 2024</time> Am depășit 10.000 de clienți mulțumiți! Vă
+                    mulțumim pentru încredere!</p>
+            </section>
+            <section id="evenimente">
+                <h2>Evenimente</h2>
+                <p>Participă la evenimentele noastre și bucură-te de oferte exclusive!</p>
+                <ul>
+                    <li><time datetime="2026-03-15T10:00">15 martie 2026, ora 10:00</time> - <b>LAN Party TechForge</b>
+                        - Organizăm un turneu de gaming la showroom-ul nostru cu premii în componente PC.
+                        <br>Participanți confirmați: <meter value="18" min="0" max="100" low="30" high="80"
+                            optimum="60">18 din 100</meter> 18/100 locuri ocupate (încă sunt locuri disponibile!)
+                    </li>
+                    <li><time datetime="2026-03-22T14:00">22 martie 2026, ora 14:00</time> - <b>Workshop Asamblare
+                            PC</b> - Învață să-ți construiești propriul calculator cu tehnicienii noștri.
+                        <br>Participanți confirmați: <meter value="92" min="0" max="100" low="30" high="80"
+                            optimum="60">92 din 100</meter> 92/100 locuri ocupate (grabește-te, locurile se epuizează!)
+                    </li>
+                    <li><time datetime="2026-04-05T11:00">5 aprilie 2026, ora 11:00</time> - <b>Demo RTX 50 Series</b> -
+                        Testează în premieră noile plăci video NVIDIA la sediul nostru.</li>
+                    <li><time datetime="2026-04-20T09:00">20 aprilie 2026, ora 09:00</time> - <b>Reduceri Flash 24h</b>
+                        - Doar în această zi, reduceri de până la 30% la toate laptopurile gaming.</li>
+                    <li><time datetime="2026-05-01T12:00">1 mai 2026, ora 12:00</time> - <b>Cadouri de 1 Mai</b> -
+                        Oferim tuturor vizitatorilor câte un mousepad gratuit în funcție de stocul disponibil.</li>
+                </ul>
+            </section>
+
+            <section id="zona7-site-server">
+                <h2>Date despre site și server</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nibh in sem cursus, at
+                    hendrerit lorem faucibus.</p>
+                <ul>
+                    <li>Timp mediu răspuns server: 182ms</li>
+                    <li>Uptime: 99.94%</li>
+                    <li>Ultimul deploy: 17 martie 2026</li>
+                </ul>
+            </section>
+
+        </div>
+        <section id="galerie-statica">
+            <h2>Galerie</h2>
+            <div id="grid-galerie">
+                <figure>
+                    <a href="/resurse/imagini/poze/setup-mare.PNG">
+                        <picture>
+                            <source srcset="/resurse/imagini/poze/setup-mic.PNG" media="(max-width:700px)" />
+                            <source srcset="/resurse/imagini/poze/setup-mediu.PNG" media="(max-width:1200px)" />
+                            <img src="/resurse/imagini/poze/setup-mare.PNG"
+                                alt="Setup gaming TechForge - click pentru imagine mare"
+                                title="Click pentru versiunea full size">
+                        </picture>
+                    </a>
+                    <figcaption>Setup Gaming - Click pe imagine pentru versiunea mare</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section id="help">
+            <h2>Tutoriale și Ghiduri</h2>
+            <p>Dacă doriți să învățați mai multe despre asamblarea și configurarea PC-urilor,
+                vă recomandăm următoarele tutoriale video. Descoperiți cât de <s>simplu</s> interesant este procesul de
+                a construi un <em>setup gaming</em> sau un sistem custom,
+                sau lăsați-ne pe noi să ne ocupăm de asamblare! &#128512; Echipa <b>TechForge</b>, cel mai bun
+                <em>magazin IT</em>, vă stă la dispoziție! &#128513;</p>
+
+            <p>Pentru informații detaliate despre componentele unui PC, consultați articolul Wikipedia:<br>
+                <a
+                    href="https://ro.wikipedia.org/wiki/Calculator_personal#Componentele_hardware_ale_unui_PC">https://ro.wikipedia.org/<wbr>wiki/<wbr>Calculator_personal<wbr>#Componentele_hardware_ale_unui_PC</a>
+            </p>
+
+            <p>Descarcă ghidul nostru PDF cu sfaturi pentru asamblare:
+                <a href="/resurse/PDF/ghid_asamblare_pc.pdf" download="ghid_asamblare_pc.pdf">📥 Descarcă
+                    ghidul de asamblare</a>
+            </p>
+
+            <div class="container-iframe">
+                <div class="taburi-iframe">
+                    <a href="https://www.youtube.com/embed/BL4DCEp7blY" target="ifr-video">Cum să asamblezi un PC</a>
+                    <a href="https://www.youtube.com/embed/i5jFXl0GZJo" target="ifr-video">Ghid aplicare pastă
+                        termică</a>
+                    <a href="https://www.youtube.com/embed/RYYoCXh2gtw" target="ifr-video">Cable management
+                        profesional</a>
+                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BL4DCEp7blY" name="ifr-video"
+                    title="YouTube video player" style="border: 0;"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+            </div>
+        </section>
+
+
+
+    </main>
+    <%- include("../fragmente/footer.ejs")%>
+</body>
+
+</html>
