@@ -8,7 +8,7 @@ ul.meniu {
 ul.meniu>li {
     flex: 1;
     text-align: center;
-    background-color: rgb(150, 135, 200);
+    background-color: var(--color-highlight);
     border: 1px solid var(--border-color);
     position: relative;
 }
@@ -16,7 +16,7 @@ ul.meniu>li {
 ul.meniu>li>a {
     display: block;
     padding: 12px 10px;
-    color: black;
+    color: var(--color-text);
     text-decoration: none;
     transition: all 1s linear;
     width: 100%;
@@ -30,17 +30,17 @@ ul.meniu>li>a {
 @keyframes animatie_submeniu {
     0% {
         opacity: 0;
-        transform: translateY(-10px) scale(0, 0);
+        transform: translateY(-6px) scaleY(0);
     }
 
     50% {
-        opacity: 0.5;
-        transform: translateY(-5px) scale(0.5, 0.5);
+        opacity: 0.75;
+        transform: translateY(-2px) scaleY(0.6);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) scale(1, 1);
+        transform: translateY(0) scaleY(1);
     }
 }
 
@@ -57,7 +57,13 @@ ul.meniu ul {
     left: 0;
     width: 100%;
     z-index: 10;
-    background-color: rgb(180, 170, 220);
+    background: var(--color-surface);
+    border: 1px solid var(--color-secondary);
+    border-top: 0;
+    border-radius: 0 0 0.55rem 0.55rem;
+    box-shadow: 0 8px 20px rgb(39 76 119 / 22%);
+    transform-origin: top center;
+    overflow: hidden;
 
 }
 
@@ -69,17 +75,25 @@ ul.meniu>li:hover>ul {
 ul.meniu ul li a {
     display: block;
     padding: 8px 10px;
-    color: black;
+    color: var(--color-text);
     text-decoration: none;
-    transition: all 0.3s linear;
+    background-color: var(--zone-bg-1);
+    border-bottom: 1px solid var(--color-highlight);
+    transition: background-color 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
+}
+
+ul.meniu ul li:last-child a {
+    border-bottom: 0;
 }
 
 ul.meniu ul li:hover {
-    background-color: var(--border-color);
+    background-color: var(--color-primary);
 }
 
 ul.meniu ul li:hover a {
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--card-bg);
+    padding-left: 14px;
 }
 
 .taburi-iframe li {
@@ -94,14 +108,14 @@ ul.meniu ul li:hover a {
 
 ul.meniu>li:hover {
     background-color: var(--border-color);
-    color: white;
+    color: var(--card-bg);
 }
 
 ul.meniu>li>a:hover {
-    color: white;
+    color: var(--card-bg);
 }
 
 ul.meniu a {
-    color: black;
+    color: var(--color-text);
     text-decoration: none;
 }
