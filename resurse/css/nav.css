@@ -9,7 +9,7 @@ ul.meniu>li {
     flex: 1;
     text-align: center;
     background-color: var(--color-highlight);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--color-primary);
     position: relative;
 }
 
@@ -77,7 +77,7 @@ ul.meniu ul li a {
     padding: 8px 10px;
     color: var(--color-text);
     text-decoration: none;
-    background-color: var(--zone-bg-1);
+    background-color: var(--color-bg);
     border-bottom: 1px solid var(--color-highlight);
     transition: background-color 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
 }
@@ -92,7 +92,7 @@ ul.meniu ul li:hover {
 
 ul.meniu ul li:hover a {
     background-color: var(--color-primary);
-    color: var(--card-bg);
+    color: var(--color-surface);
     padding-left: 14px;
 }
 
@@ -100,19 +100,19 @@ ul.meniu ul li:hover a {
     width: var(--latime-buton);
     height: var(--inaltime-buton);
     flex-wrap: wrap;
-    background-color: var(--background-color);
-    border: 1px solid var(--border-color);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-primary);
     transition: all 1s linear;
     font-weight: bold;
 }
 
 ul.meniu>li:hover {
-    background-color: var(--border-color);
-    color: var(--card-bg);
+    background-color: var(--color-primary);
+    color: var(--color-surface);
 }
 
 ul.meniu>li>a:hover {
-    color: var(--card-bg);
+    color: var(--color-surface);
 }
 
 ul.meniu a {
