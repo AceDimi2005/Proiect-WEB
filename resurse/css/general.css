@@ -1,5 +1,14 @@
 :root {
-    --margin-dimens: clamp(1rem, 5vw, 6rem);
+    --font-main: "Exo 2", "Trebuchet MS", sans-serif;
+    --page-inline-space: 4rem;
+    --grid-zone-gap: 1rem;
+    --zone-padding: 1rem;
+    --zone-radius: 0.85rem;
+    --zone-border: 1px solid var(--color-primary);
+    --zone-shadow: 0 10px 22px rgb(13 34 56 / 0.14);
+    --media-width: 100%;
+    --media-max-width: 56rem;
+    --media-min-width: 14rem;
 }
 
 html {
@@ -19,16 +28,46 @@ body {
     background-color: var(--color-bg);
     margin: 0;
     color: var(--color-text);
+    font-family: var(--font-main);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: 0.02em;
+}
+
+.icon-static,
+.icon-animat {
+    margin-right: 0.35rem;
+    color: var(--color-secondary);
+}
+
+.icon-animat {
+    color: var(--color-primary);
 }
 
 main {
-    margin-left: var(--margin-dimens);
-    margin-right: var(--margin-dimens);
+    margin-left: var(--page-inline-space);
+    margin-right: var(--page-inline-space);
+}
+
+header,
+footer {
+    margin-left: var(--page-inline-space);
+    margin-right: var(--page-inline-space);
+    margin-top: 0.8rem;
+    background: var(--color-surface);
+    border: var(--zone-border);
+    border-radius: var(--zone-radius);
+    box-shadow: var(--zone-shadow);
+    padding: var(--zone-padding);
 }
 
 #grid-pagina {
     display: grid;
-    gap: 0.75rem;
+    gap: var(--grid-zone-gap);
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-areas:
         "z1 z1 z1 z1"
@@ -38,8 +77,10 @@ main {
 }
 
 #grid-pagina > * {
-    border: 1px solid var(--color-primary);
-    padding: 0.75rem;
+    border: var(--zone-border);
+    border-radius: var(--zone-radius);
+    box-shadow: var(--zone-shadow);
+    padding: var(--zone-padding);
     background: var(--color-surface);
     min-width: 0;
 }
@@ -148,9 +189,26 @@ figure {
     margin: 0;
 }
 
-picture img {
-    width: 100%;
+main picture img,
+main img,
+main video,
+main iframe,
+main embed {
+    width: var(--media-width);
+    max-width: var(--media-max-width);
+    min-width: var(--media-min-width);
     display: block;
+}
+
+main iframe,
+main embed,
+main video {
+    width: 100%;
+}
+
+main iframe[src*="youtube.com/embed"] {
+    aspect-ratio: 16 / 9;
+    height: auto;
 }
 
 #link-top {
@@ -231,7 +289,8 @@ picture img {
 .container-iframe iframe {
     order: 1;
     width: min(100%, 35rem);
-    height: 18rem;
+    aspect-ratio: 16 / 9;
+    height: auto;
     border: 3px solid var(--color-secondary);
     background: var(--color-surface);
     display: block;
@@ -291,6 +350,13 @@ picture img {
 }
 
 @media screen and (max-width: 1200px) {
+    :root {
+        --page-inline-space: 2rem;
+        --grid-zone-gap: 0.75rem;
+        --media-max-width: 48rem;
+        --media-min-width: 12rem;
+    }
+
     #grid-pagina {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-areas:
@@ -307,16 +373,29 @@ picture img {
 }
 
 @media screen and (max-width: 700px) {
+    :root {
+        --page-inline-space: 0.8rem;
+        --grid-zone-gap: 0.5rem;
+        --zone-padding: 0.75rem;
+        --media-max-width: 100%;
+        --media-min-width: 0;
+    }
+
     html {
         font-size: 15px;
     }
 
     #grid-pagina {
-        display: block;
-    }
-
-    #grid-pagina > * + * {
-        margin-top: 0.75rem;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "z1"
+            "z8"
+            "z2"
+            "z3"
+            "z4"
+            "z7"
+            "z5"
+            "z6";
     }
 
     .container-iframe {
@@ -327,7 +406,6 @@ picture img {
 
     .container-iframe iframe {
         width: 100%;
-        height: 14rem;
     }
 
     .taburi-iframe {
