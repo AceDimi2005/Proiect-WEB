@@ -8,20 +8,19 @@ html {
 }
 
 body {
-    /* Schema cromatica TechForge (armonica in jurul albastru-indigo) */
-    --color-bg: #d6e2f2;
-    --color-surface: #f5f9ff;
-    --color-primary: #274c77;
-    --color-secondary: #3a6ea5;
-    --color-accent: #4d908e;
-    --color-highlight: #98c1d9;
-    --color-text: #102a43;
+    --color-bg: #dbe9f6;
+    --color-surface: #f4f8ff;
+    --color-primary: #1f3b5b;
+    --color-secondary: #2f5d8a;
+    --color-accent: #0f9d9a;
+    --color-highlight: #79b6e6;
+    --color-text: #0d2238;
 
-    --zone-bg-1: #dcecff;
-    --zone-bg-2: #d4e3ff;
-    --zone-bg-3: #d7f0ee;
-    --zone-bg-4: #e2e8ff;
-    --zone-bg-5: #d9e9f7;
+    --zone-bg-1: var(--color-bg);
+    --zone-bg-2: var(--color-highlight);
+    --zone-bg-3: color-mix(in srgb, var(--color-highlight) 70%, var(--color-bg) 30%);
+    --zone-bg-4: color-mix(in srgb, var(--color-bg) 65%, var(--color-highlight) 35%);
+    --zone-bg-5: color-mix(in srgb, var(--color-highlight) 55%, var(--color-bg) 45%);
 
     --background-color: var(--color-bg);
     --border-color: var(--color-primary);
@@ -32,28 +31,28 @@ body {
     --table-grid: var(--color-secondary);
     --table-row-even: var(--color-primary);
     --table-row-odd: var(--color-accent);
-    --table-outline-transparent: rgb(42 157 143 / 0%);
-    --table-outline-hover: rgb(42 157 143 / 70%);
+    --table-outline-transparent: transparent;
+    --table-outline-hover: var(--color-accent);
 
     --link-top-text: var(--color-primary);
     --link-top-border: var(--color-secondary);
-    --link-top-icon-bg: radial-gradient(circle at 50% 32%, #ffffff 0%, #dfefff 56%, #b6d8f1 100%);
-    --link-top-icon-shadow: 0 10px 20px rgb(28 61 104 / 26%);
+    --link-top-icon-bg: var(--color-highlight);
+    --link-top-icon-shadow: 0 10px 20px var(--color-secondary);
     --link-top-icon-color: var(--color-secondary);
-    --link-top-icon-text-shadow: 0 0 2px rgb(255 255 255 / 90%);
-    --link-top-label-bg: #edf5ff;
+    --link-top-icon-text-shadow: none;
+    --link-top-label-bg: var(--color-surface);
     --link-top-label-text: var(--color-primary);
-    --link-top-hover-bg: radial-gradient(circle at 50% 28%, #e8f5ff 0%, #b8dcf3 52%, #7baed4 100%);
-    --link-top-hover-shadow: 0 12px 24px rgb(24 51 90 / 34%);
+    --link-top-hover-bg: var(--color-secondary);
+    --link-top-hover-shadow: 0 12px 24px var(--color-primary);
     --link-top-hover-color: var(--color-primary);
 
     --iframe-border: var(--color-secondary);
-    --iframe-bg: #ffffff;
+    --iframe-bg: var(--color-surface);
     --tab-border: var(--color-secondary);
     --tab-text: var(--color-text);
-    --tab-bg: radial-gradient(circle at 25% 18%, #f4f9ff 0%, #d2e4f6 45%, #9ec2e3 100%);
-    --tab-shadow: inset 0 0 2px rgb(255 255 255 / 90%), 0 1px 3px rgb(25 43 78 / 30%);
-    --tab-notch-bg: #9ec2e3;
+    --tab-bg: var(--color-surface);
+    --tab-shadow: none;
+    --tab-notch-bg: var(--color-highlight);
 
     background-color: var(--background-color);
     margin: 0;

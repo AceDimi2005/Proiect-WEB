@@ -9,7 +9,7 @@ ul.meniu {
 ul.meniu>li {
     flex: 1;
     text-align: center;
-    background-color: rgb(150, 135, 200);
+    background-color: var(--color-highlight);
     border: 1px solid var(--border-color);
     position: relative;
 }
@@ -17,7 +17,7 @@ ul.meniu>li {
 ul.meniu>li>a {
     display: block;
     padding: 12px 10px;
-    color: black;
+    color: var(--color-text);
     text-decoration: none;
     transition: all 1s linear;
     width: 100%;
@@ -65,7 +65,7 @@ ul.meniu ul {
     left: 0;
     width: 100%;
     z-index: 10;
-    background-color: rgb(180, 170, 220);
+    background-color: var(--color-surface);
 
 }
 
@@ -77,7 +77,7 @@ ul.meniu>li:hover>ul {
 ul.meniu ul li a {
     display: block;
     padding: 8px 10px;
-    color: black;
+    color: var(--color-text);
     text-decoration: none;
     transition: all 0.3s linear;
 }
@@ -87,7 +87,7 @@ ul.meniu ul li:hover {
 }
 
 ul.meniu ul li:hover a {
-    color: white;
+    color: var(--color-surface);
 }
 
 .taburi-iframe li {
@@ -102,14 +102,14 @@ ul.meniu ul li:hover a {
 
 ul.meniu>li:hover {
     background-color: var(--border-color);
-    color: white;
+    color: var(--color-surface);
 }
 
 ul.meniu>li>a:hover {
-    color: white;
+    color: var(--color-surface);
 }
 
 ul.meniu a {
-    color: black;
+    color: var(--color-text);
     text-decoration: none;
 }
