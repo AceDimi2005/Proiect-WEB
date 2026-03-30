@@ -1,24 +1,77 @@
+<div id="print-watermark" aria-hidden="true">Pirvanescu Dimitrie-Alexandru</div>
+
 <header>
-        <h1>TechForge</h1>
-    <img src="/resurse/imagini/sigla.png" alt="sigla" />
-        <nav>
-            <ul class="meniu">
-                <li><a href="index.html">Acasă</a>
-                    <ul>
-                        <li><a href="#welcome">Bine ați venit</a></li>
-                        <li><a href="#promotii">Promoții și oferte</a></li>
-                        <li><a href="#produse">Produsele noastre</a></li>
-                        <li><a href="#orar">Orar</a></li>
-                        <li><a href="#anunturi">Anunțuri</a></li>
-                        <li><a href="#evenimente">Evenimente</a></li>
-                        <li><a href="#index-intrebari">Întrebări frecvente</a></li>
-                        <li><a href="#galerie-statica">Galerie</a></li>
-                        <li><a href="#help">Tutoriale și Ghiduri</a></li>
-                    </ul>
-                </li>
-                <li><a href="produse.html">Catalog Produse</a></li>
-                <li><a href="cos.html">Coș și Checkout</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1>TechForge</h1>
+    <img src="/resurse/imagini/sigla.png" alt="Sigla TechForge" />
+
+    <nav class="site-nav" aria-label="Meniu principal">
+        <input type="checkbox" id="ch-menu" aria-label="Deschide sau inchide meniul" />
+        <label id="hamburger" for="ch-menu" aria-hidden="true">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <ul class="meniu">
+            <li class="home-item has-submenu">
+                <a href="/">
+                    <i class="fa-solid fa-house menu-icon" aria-hidden="true"></i>
+                    <span class="item-label">Acasa</span>
+                </a>
+                <ul class="submenu">
+                    <li><a href="/#welcome">Bine ati venit</a></li>
+                    <li><a href="/#promotii">Promotii si oferte</a></li>
+                    <li><a href="/#produse">Produsele noastre</a></li>
+                    <li><a href="/#orar">Orar</a></li>
+                    <li><a href="/#anunturi">Anunturi</a></li>
+                    <li><a href="/#evenimente">Evenimente</a></li>
+                    <li><a href="/#index-intrebari">Intrebari frecvente</a></li>
+                    <li><a href="/#help">Tutoriale si ghiduri</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="/despre">
+                    <i class="fa-solid fa-circle-info menu-icon" aria-hidden="true"></i>
+                    <span class="item-label">Despre</span>
+                </a>
+            </li>
+
+            <li class="has-submenu">
+                <a href="/produse">
+                    <i class="fa-solid fa-box-open menu-icon" aria-hidden="true"></i>
+                    <span class="item-label">Produse</span>
+                </a>
+                <ul class="submenu">
+                    <li><a href="/produse">Toate produsele</a></li>
+                    <li><a href="/produse?categorie=componente-pc">Componente PC</a></li>
+                    <li><a href="/produse?categorie=laptopuri">Laptopuri si sisteme</a></li>
+                    <li><a href="/produse?categorie=periferice">Periferice</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="/cos">
+                    <i class="fa-solid fa-cart-shopping menu-icon" aria-hidden="true"></i>
+                    <span class="item-label">Cos</span>
+                </a>
+            </li>
+
+            <li class="has-submenu">
+                <a href="/galerie-statica">
+                    <i class="fa-solid fa-images menu-icon" aria-hidden="true"></i>
+                    <span class="item-label">Galerie</span>
+                </a>
+                <ul class="submenu">
+                    <li><a href="/galerie-statica">Galerie statica</a></li>
+                    <li><a href="/galerie-dinamica">Galerie dinamica</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="/contact">
+                    <i class="fa-solid fa-envelope menu-icon" aria-hidden="true"></i>
+                    <span class="item-label">Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>

@@ -1,115 +1,310 @@
-$null: 0;
-ul.meniu {
-    display: flex;
+$desktop-item-height: 3.3rem;
+$desktop-subitem-height: 2.7rem;
+$medium-breakpoint: 1000px;
+$small-breakpoint: 700px;
+$submenu-max-height: 38rem;
+$submenu-item-count: 8;
+
+%list-reset {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-ul.meniu>li {
-    flex: 1;
-    text-align: center;
-    background-color: var(--color-highlight);
-    border: 1px solid var(--color-primary);
-    position: relative;
+%menu-surface {
+    background: var(--color-primary);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 80%, #000 20%);
 }
 
-ul.meniu>li>a {
+%submenu-bar {
+    content: "";
     display: block;
-    padding: 12px 10px;
-    color: var(--color-text);
-    text-decoration: none;
-    transition: all 1s linear;
-    width: 100%;
-    height: 100%;
-}
-
-#tab-orar{
-    width: 100%;   
-}
-
-%nu_afiseaza {
-    display: none;
-}
-#hamburger{
-    @extend %nu_afiseaza;
-}
-
-@keyframes animatie_submeniu {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px) scale(0, 0);
-    }
-
-    50% {
-        opacity: 0.5;
-        transform: translateY(-5px) scale(0.5, 0.5);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1, 1);
-    }
-}
-
-nav {
-    --latime-buton: 120px;
-}
-
-ul.meniu ul {
-    display: none;
-    list-style: none;
-    padding: 0;
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    background-color: var(--color-surface);
-
+    top: 0;
+    height: 0;
+    width: 0.34rem;
+    opacity: 0;
+    background: linear-gradient(to bottom, #fff, #000);
+    transition: height 0.28s ease, opacity 0.28s ease;
 }
 
-ul.meniu>li:hover>ul {
-    display: block;
-    animation: animatie_submeniu 0.4s ease forwards;
+.site-nav {
+    --menu-item-height: #{$desktop-item-height};
+    --submenu-item-height: #{$desktop-subitem-height};
+    --menu-radius: 0.65rem;
+    --menu-transition-fast: 0.25s;
+    --menu-transition-slow: 0.35s;
+
+    position: relative;
+    z-index: 100;
+
+    #ch-menu {
+        display: none;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    ul.meniu {
+        @extend %list-reset;
+        @extend %menu-surface;
+        display: flex;
+        width: 100%;
+        border-radius: var(--menu-radius);
+        overflow: visible;
+
+        > li {
+            flex: 1 1 0;
+            min-width: 0;
+            position: relative;
+            border-right: 1px solid color-mix(in srgb, var(--color-secondary) 60%, #000 40%);
+
+            &:last-child {
+                border-right: none;
+            }
+
+            > a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.45rem;
+                min-height: var(--menu-item-height);
+                padding: 0.5rem 0.65rem;
+                color: var(--color-surface);
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1rem;
+                line-height: 1.1;
+                transition: transform var(--menu-transition-slow) ease, font-size var(--menu-transition-slow) ease,
+                    background-color var(--menu-transition-fast) ease;
+            }
+
+            &:hover > a,
+            &:focus-within > a {
+                font-size: 1.12rem;
+                transform: translateY(-2px);
+                background: color-mix(in srgb, var(--color-secondary) 65%, #000 35%);
+            }
+
+            > ul.submenu {
+                @extend %list-reset;
+                position: absolute;
+                top: calc(100% + 1px);
+                left: 0;
+                width: 100%;
+                transform-origin: top center;
+                transform: scaleY(0);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform var(--menu-transition-slow) ease, opacity var(--menu-transition-fast) ease;
+                background: color-mix(in srgb, var(--color-surface) 94%, var(--color-primary) 6%);
+                border: 1px solid color-mix(in srgb, var(--color-secondary) 60%, #000 40%);
+                border-top: 0;
+                box-shadow: 0 14px 28px rgb(0 0 0 / 0.28);
+                border-radius: 0 0 var(--menu-radius) var(--menu-radius);
+                overflow: hidden;
+
+                > li {
+                    > a {
+                        position: relative;
+                        display: block;
+                        min-height: var(--submenu-item-height);
+                        padding: 0.7rem 1.05rem;
+                        color: var(--color-text);
+                        text-decoration: none;
+                        font-weight: 600;
+                        background: color-mix(in srgb, var(--color-bg) 82%, #fff 18%);
+                        border-bottom: 1px solid color-mix(in srgb, var(--color-highlight) 70%, #fff 30%);
+                        transition: background-color 0.28s ease, color 0.28s ease, padding-inline 0.28s ease;
+
+                        &::before {
+                            @extend %submenu-bar;
+                            left: 0.45rem;
+                        }
+
+                        &::after {
+                            @extend %submenu-bar;
+                            right: 0.45rem;
+                        }
+
+                        &:hover,
+                        &:focus-visible {
+                            background: color-mix(in srgb, var(--color-primary) 86%, #000 14%);
+                            color: #fff;
+                            padding-left: 1.45rem;
+                            padding-right: 1.45rem;
+
+                            &::before,
+                            &::after {
+                                height: 100%;
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    &:last-child > a {
+                        border-bottom: 0;
+                    }
+                }
+            }
+
+            &:hover > ul.submenu,
+            &:focus-within > ul.submenu {
+                transform: scaleY(1);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    .menu-icon {
+        font-size: 1rem;
+    }
 }
 
-ul.meniu ul li a {
-    display: block;
-    padding: 8px 10px;
-    color: var(--color-text);
-    text-decoration: none;
-    transition: all 0.3s linear;
+@for $i from 1 through $submenu-item-count {
+    .site-nav ul.meniu > li > ul.submenu > li:nth-child(#{$i}) > a {
+        transition-delay: $i * 0.015s;
+    }
 }
 
-ul.meniu ul li:hover {
-    background-color: var(--color-primary);
+@media (max-width: $medium-breakpoint) {
+    .site-nav {
+        ul.meniu {
+            > li {
+                > a {
+                    font-size: 0.92rem;
+                    gap: 0;
+                }
+
+                &:hover > a,
+                &:focus-within > a {
+                    font-size: 1rem;
+                }
+            }
+
+            .item-label {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+            }
+
+            .menu-icon {
+                font-size: 1.08rem;
+            }
+        }
+    }
 }
 
-ul.meniu ul li:hover a {
-    color: var(--color-surface);
-}
+@media (max-width: $small-breakpoint) {
+    .site-nav {
+        #hamburger {
+            background: var(--color-primary);
+            border: 1px solid color-mix(in srgb, var(--color-primary) 80%, #000 20%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 2.55rem;
+            color: #fff;
+            border-radius: 0.55rem;
+            cursor: pointer;
+            transition: transform 0.28s ease, background-color 0.28s ease;
 
-.taburi-iframe li {
-    width: var(--latime-buton);
-    height: var(--inaltime-buton);
-    flex-wrap: wrap;
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-primary);
-    transition: all 1s linear;
-    font-weight: bold;
-}
+            &:hover {
+                transform: translateY(-1px) scale(1.03);
+                background: color-mix(in srgb, var(--color-secondary) 72%, #000 28%);
+            }
 
-ul.meniu>li:hover {
-    background-color: var(--color-primary);
-    color: var(--color-surface);
-}
+            i {
+                font-size: 1.6rem;
+                line-height: 1;
+            }
+        }
 
-ul.meniu>li>a:hover {
-    color: var(--color-surface);
-}
+        ul.meniu {
+            position: absolute;
+            top: calc(100% + 0.4rem);
+            left: 0;
+            display: block;
+            width: min(19rem, calc(100vw - 2rem));
+            transform-origin: left center;
+            transform: scaleX(0);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.32s ease, opacity 0.22s ease;
+            border-radius: 0.6rem;
+            overflow: hidden;
 
-ul.meniu a {
-    color: var(--color-text);
-    text-decoration: none;
+            > li {
+                border-right: 0;
+                border-bottom: 1px solid color-mix(in srgb, var(--color-secondary) 65%, #000 35%);
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+
+                > a {
+                    justify-content: flex-start;
+                    padding-inline: 0.9rem;
+                    min-height: 2.9rem;
+                    gap: 0.65rem;
+                }
+
+                > ul.submenu {
+                    position: static;
+                    width: 100%;
+                    border: 0;
+                    border-top: 1px solid color-mix(in srgb, var(--color-secondary) 55%, #000 45%);
+                    box-shadow: none;
+                    border-radius: 0;
+                    transform-origin: left center;
+                    transform: scaleX(0);
+                    max-height: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: transform 0.3s ease, max-height 0.3s ease, opacity 0.24s ease;
+                }
+
+                &:hover > ul.submenu,
+                &:focus-within > ul.submenu {
+                    transform: scaleX(1);
+                    max-height: $submenu-max-height;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            .item-label {
+                position: static;
+                width: auto;
+                height: auto;
+                margin: 0;
+                clip: auto;
+                white-space: normal;
+                overflow: visible;
+            }
+
+            .home-item > a .item-label {
+                display: none;
+            }
+
+            .home-item > a .menu-icon {
+                margin-right: 0;
+            }
+        }
+
+        #ch-menu:checked ~ ul.meniu {
+            transform: scaleX(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
 }
