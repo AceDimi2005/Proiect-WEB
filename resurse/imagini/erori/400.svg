@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="t d">
+  <title id="t">Eroare 400</title>
+  <desc id="d">Cerere invalida.</desc>
+  <rect width="1200" height="630" fill="#fff3e8" />
+  <rect x="50" y="50" width="1100" height="530" rx="24" fill="#ffffff" stroke="#bf5700" stroke-width="6" />
+  <text x="600" y="280" text-anchor="middle" font-size="140" font-family="Verdana, sans-serif" fill="#bf5700">400</text>
+  <text x="600" y="360" text-anchor="middle" font-size="34" font-family="Verdana, sans-serif" fill="#8f4300">Cerere invalida</text>
+</svg>

@@ -1,2 +1,6 @@
 node_modules/
 .DS_Store
+temp/
+logs/
+backup/
+fisiere_uploadate/

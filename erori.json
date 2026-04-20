@@ -1,0 +1,38 @@
+{
+  "cale_baza": "resurse/imagini/erori",
+  "eroare_default": {
+    "titlu": "Eroare",
+    "text": "A aparut o eroare.",
+    "imagine": "default.svg"
+  },
+  "info_erori": [
+    {
+      "identificator": 400,
+      "status": true,
+      "titlu": "400 - Cerere invalida",
+      "text": "Cererea trimisa catre server este invalida.",
+      "imagine": "400.svg"
+    },
+    {
+      "identificator": 403,
+      "status": true,
+      "titlu": "403 - Acces interzis",
+      "text": "Nu ai permisiunea de a accesa aceasta resursa.",
+      "imagine": "403.svg"
+    },
+    {
+      "identificator": 404,
+      "status": true,
+      "titlu": "404 - Pagina nu a fost gasita",
+      "text": "Pagina cautata nu exista.",
+      "imagine": "404.svg"
+    },
+    {
+      "identificator": 500,
+      "status": true,
+      "titlu": "500 - Eroare interna",
+      "text": "A aparut o eroare interna pe server.",
+      "imagine": "500.svg"
+    }
+  ]
+}

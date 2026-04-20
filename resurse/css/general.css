@@ -24,6 +24,10 @@ body {
     --color-accent: #0f9d9a;
     --color-highlight: #79b6e6;
     --color-text: #0d2238;
+    --color-link-visited: #2f5d8a;
+    --color-link-hover-spot: #79b6e6;
+    --color-link-external-icon: #1f3b5b;
+    --color-link-external-icon-hover: #0f9d9a;
 
     background-color: var(--color-bg);
     margin: 0;
@@ -217,6 +221,80 @@ main video {
 main iframe[src*="youtube.com/embed"] {
     aspect-ratio: 16 / 9;
     height: auto;
+}
+
+a[href^="http"]::before {
+    content: "⮳";
+    display: inline-block;
+    margin-right: 0.2em;
+    font-size: 1.5em;
+    line-height: 1;
+    color: var(--color-link-external-icon);
+    transition: color 0.3s ease;
+}
+
+a[href^="http"]:hover::before,
+a[href^="http"]:focus-visible::before {
+    color: var(--color-link-external-icon-hover);
+}
+
+main a {
+    display: inline-block;
+    color: var(--color-primary);
+    border: 0.12em solid transparent;
+    border-radius: 0.35em;
+    padding: 0.02em 0.16em;
+    background-image: radial-gradient(
+        circle at center,
+        var(--color-link-hover-spot) 0%,
+        var(--color-link-hover-spot) 40%,
+        rgb(0 0 0 / 0) 80%,
+        rgb(0 0 0 / 0) 100%
+    );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0 0;
+    transition: background-size 0.55s ease, border-color 0.2s ease;
+}
+
+a:visited {
+    color: var(--color-link-visited);
+}
+
+main a:hover,
+main a:focus-visible {
+    background-size: 100% 100%;
+}
+
+main a:active {
+    border-color: var(--color-secondary);
+}
+
+#video-vtt-player {
+    width: 88%;
+    min-width: 18rem;
+    max-width: 62rem;
+    margin: 0.8rem auto 0;
+    border: 3px solid var(--color-secondary);
+    border-radius: 0.75rem;
+    box-shadow: 0 14px 26px rgb(13 34 56 / 0.22);
+    background: #050c16;
+}
+
+#video-vtt-player::cue {
+    color: var(--color-text);
+    line-height: 1.35;
+    font-weight: 700;
+    text-shadow: none;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    #video-vtt-player::cue {
+        background: linear-gradient(90deg, #0d2238, #1f3b5b);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
 }
 
 #link-top {
@@ -424,6 +502,11 @@ main iframe[src*="youtube.com/embed"] {
 
     .container-iframe iframe {
         width: 100%;
+    }
+
+    #video-vtt-player {
+        width: 100%;
+        min-width: 0;
     }
 
     .taburi-iframe {

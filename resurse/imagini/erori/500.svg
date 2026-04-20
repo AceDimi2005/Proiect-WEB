@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="t d">
+  <title id="t">Eroare 500</title>
+  <desc id="d">Eroare interna.</desc>
+  <rect width="1200" height="630" fill="#f2ecff" />
+  <rect x="50" y="50" width="1100" height="530" rx="24" fill="#ffffff" stroke="#4d2f7a" stroke-width="6" />
+  <text x="600" y="280" text-anchor="middle" font-size="140" font-family="Verdana, sans-serif" fill="#4d2f7a">500</text>
+  <text x="600" y="360" text-anchor="middle" font-size="34" font-family="Verdana, sans-serif" fill="#3e2662">Eroare interna</text>
+</svg>

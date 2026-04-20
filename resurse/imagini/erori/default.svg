@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="t d">
+  <title id="t">Eroare generica</title>
+  <desc id="d">Imagine implicita pentru pagini de eroare.</desc>
+  <rect width="1200" height="630" fill="#e9eef5" />
+  <rect x="50" y="50" width="1100" height="530" rx="24" fill="#ffffff" stroke="#1f3b5b" stroke-width="6" />
+  <text x="600" y="280" text-anchor="middle" font-size="110" font-family="Verdana, sans-serif" fill="#1f3b5b">EROARE</text>
+  <text x="600" y="360" text-anchor="middle" font-size="34" font-family="Verdana, sans-serif" fill="#2f5d8a">A aparut o problema neasteptata</text>
+</svg>
