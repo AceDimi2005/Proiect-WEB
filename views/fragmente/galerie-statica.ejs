@@ -1,0 +1,47 @@
+<section id="galerie-statica" class="galerie-statica-componenta">
+    <h2>Galerie statica</h2>
+    <p class="detalii-galerie">Imagini filtrate pentru luna curenta: <strong><%= lunaGalerie %></strong>.</p>
+
+    <% if (Array.isArray(imaginiGalerie) && imaginiGalerie.length > 0 && Array.isArray(celuleGalerie) && celuleGalerie.length > 0) { %>
+        <div class="grid-galerie-statica">
+            <% celuleGalerie.forEach(function(celula) { %>
+                <% if (celula.tip === "imagine" && celula.imagine) { %>
+                    <% const imagine = celula.imagine; %>
+                    <figure>
+                        <a href="<%= imagine.cale_mare %>" target="_blank" rel="noopener" title="<%= imagine.text_descriere %>">
+                            <picture>
+                                <source srcset="<%= imagine.cale_mica %>" media="(max-width:700px)" />
+                                <source srcset="<%= imagine.cale_medie %>" media="(max-width:1200px)" />
+                                <img
+                                    src="<%= imagine.cale_mare %>"
+                                    alt="<%= imagine.alt %>"
+                                    title="<%= imagine.text_descriere %>"
+                                    loading="lazy" />
+                            </picture>
+                        </a>
+                        <figcaption>
+                            <span class="titlu-imagine"><%= imagine.titlu %></span>
+                            <span class="descriere-imagine"><%= imagine.text_descriere %></span>
+                            <% if (imagine.autor) { %>
+                                <span class="autor-imagine">Foto: <%= imagine.autor %></span>
+                            <% } %>
+                            <% if (imagine.credit) { %>
+                                <span class="credit-imagine">Credit: <%= imagine.credit %></span>
+                            <% } %>
+                            <% if (imagine.licenta) { %>
+                                <span class="licenta-imagine">Licenta: <%= imagine.licenta %></span>
+                            <% } %>
+                            <% if (imagine.sursa) { %>
+                                <span class="sursa-imagine">Sursa: <%= imagine.sursa %></span>
+                            <% } %>
+                        </figcaption>
+                    </figure>
+                <% } else { %>
+                    <div class="celula-goala-galerie" aria-hidden="true"></div>
+                <% } %>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p class="fara-imagini-galerie">Nu exista imagini disponibile pentru luna selectata.</p>
+    <% } %>
+</section>

@@ -1,0 +1,25 @@
+
+
+@use "bootstrap/scss/bootstrap" with (
+  $font-family-base: ('Exo 2', 'Trebuchet MS', sans-serif),
+  $grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 700px,
+    lg: 1000px,
+    xl: 1200px,
+    xxl: 1400px
+  ),
+  $border-radius: 0.85rem,
+  $h1-font-size: 2.8rem,
+  $h2-font-size: 2.2rem,
+  $primary: #1f3b5b,
+  $secondary: #0f9d9a,
+  $success: #79b6e6,
+  $primary-text-emphasis: #ffffff,
+  $secondary-text-emphasis: #f4f8ff,
+  $btn-color: #f4f8ff,
+  $link-color: #2f5d8a,
+  $enable-shadows: true
+);
+

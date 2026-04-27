@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Galerie Statica - TechForge</title>
+    <meta name="description" content="Galeria statica TechForge cu imagini filtrate pe luna curenta." />
+    <meta name="keywords" content="galerie statica, imagini techforge, galerie foto" />
+    <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body id="top">
+    <%- include("../fragmente/header.ejs") %>
+
+    <main>
+        <%- include("../fragmente/galerie-statica.ejs", { imaginiGalerie: imaginiGalerie, celuleGalerie: celuleGalerie, lunaGalerie: lunaGalerie }) %>
+
+        <!-- Galerie dinamica (imagini externe) inserata sub galeria statica -->
+        <%- include("../fragmente/galerie-animata.ejs", { numarImaginiAnimata: numarImaginiAnimata, celuleGalerieAnimata: celuleGalerieAnimata, cssGalerieAnimata: cssGalerieAnimata }) %>
+    </main>
+
+    <%- include("../fragmente/footer.ejs") %>
+</body>
+</html>

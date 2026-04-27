@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Galerie Dinamica - TechForge</title>
+    <meta name="description" content="Galerie animata cu selectie dinamica de imagini pentru TechForge." />
+    <meta name="keywords" content="galerie dinamica, galerie animata, imagini techforge" />
+    <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body id="top">
+    <%- include("../fragmente/header.ejs") %>
+
+    <main>
+        <%- include("../fragmente/galerie-animata.ejs", { numarImaginiAnimata: numarImaginiAnimata, celuleGalerieAnimata: celuleGalerieAnimata, cssGalerieAnimata: cssGalerieAnimata }) %>
+    </main>
+
+    <%- include("../fragmente/footer.ejs") %>
+</body>
+</html>

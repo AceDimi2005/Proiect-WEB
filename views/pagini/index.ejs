@@ -17,7 +17,7 @@
 
             <section id="welcome">
                 <hgroup>
-                    <h2>Bine ați venit</h2>
+                    <h2><span id="text" tabindex="0">Bine ați venit<span id="text-reflectat" aria-hidden="true">Bine ați venit</span></span></h2>
                     <p class="subtitlu">Prezentarea magazinului</p>
                 </hgroup>
 
@@ -160,7 +160,7 @@
             </section>
 
             <section id="zona8">
-Ac                <h2>Conținut extins</h2>
+               <h2>Conținut extins</h2>
                 <section id="promotii">
                     <h3>Promoții și oferte</h3>
                     <blockquote>
@@ -282,6 +282,7 @@ Ac                <h2>Conținut extins</h2>
                 </p>
                 <p><time datetime="2024-12-01">1 decembrie 2024</time> Am depășit 10.000 de clienți mulțumiți! Vă
                     mulțumim pentru încredere!</p>
+                <hr id="efect-css-stilizare-hr" class="hr-efect-css" />
             </section>
             <section id="evenimente">
                 <h2>Evenimente</h2>
@@ -318,26 +319,16 @@ Ac                <h2>Conținut extins</h2>
             </section>
 
         </div>
-        <section id="galerie-statica">
-            <h2>Galerie</h2>
-            <div id="grid-galerie">
-                <figure>
-                    <a href="/resurse/imagini/poze/setup-mare.PNG">
-                        <picture>
-                            <source srcset="/resurse/imagini/poze/setup-mic.PNG" media="(max-width:700px)" />
-                            <source srcset="/resurse/imagini/poze/setup-mediu.PNG" media="(max-width:1200px)" />
-                            <img src="/resurse/imagini/poze/setup-mare.PNG"
-                                alt="Setup gaming TechForge - click pentru imagine mare"
-                                title="Click pentru versiunea full size">
-                        </picture>
-                    </a>
-                    <figcaption>Setup Gaming - Click pe imagine pentru versiunea mare</figcaption>
-                </figure>
-            </div>
-        </section>
+        <%- include("../fragmente/galerie-statica.ejs", { imaginiGalerie: imaginiGalerie, celuleGalerie: celuleGalerie, lunaGalerie: lunaGalerie }) %>
 
         <section id="bonus-media">
             <h2>Bonus: Resurse Interactive</h2>
+
+            <article id="duotone-demo">
+                <h3>Efect duotone</h3>
+                <p>Trece cu cursorul peste imagine (sau selectează cu tab) pentru a vedea cele două filtre cromatice care intră din lateral.</p>
+                <div id="efect-css-duotone" role="img" aria-label="Setup TechForge cu efect duotone la hover" tabindex="0"></div>
+            </article>
 
             <article id="formula-mathml">
                 <h3>Formula performanței unui sistem</h3>
@@ -463,6 +454,35 @@ Ac                <h2>Conținut extins</h2>
         </section>
 
 
+
+    <section class="container mt-5 mb-5 p-4 bg-light shadow-sm rounded border border-success">
+        <h1 class="text-primary text-center mb-4">Sectiune Testare Bootstrap</h1>
+        <h2 class="text-secondary">Culori, Fonturi, Border Radius</h2>
+        <p class="lead">Acesta este un test al integrarii Bootstrap si a customizarii variabilelor lui primare prin SASS. S-a schimbat fontul la Exo 2/Trebuchet, culoarea primara <code>$primary</code> spre albastru inchis si culoarea de succes. Rotunjimea (border-radius) de asemenea a fost marita la <kbd>0.85rem</kbd>.</p>
+        
+        <div class="row gx-3 mt-4">
+            <div class="col-md-6 mb-3">
+                <div class="card text-bg-primary h-100 shadow border-0">
+                    <div class="card-header bg-success text-white fw-bold">Card $primary + $success</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Font-contrast automat SASS</h5>
+                        <p class="card-text">Cu customizarea prin <code>.scss</code>, text-urile au culoarea aleasa de mine <code>$primary-text-emphasis: #ffffff;</code>.</p>
+                        <a href="#" class="btn btn-warning shadow-sm">Buton din tema implicita</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card text-bg-secondary h-100 shadow border-0">
+                    <div class="card-header text-white fw-bold">Card $secondary</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Culoare de Accent</h5>
+                        <p class="card-text">Umbrele au fost activate activand variabila globala <code>$enable-shadows: true;</code> in fisierul <i>custom.scss</i>. Dimensiunea unui <i>md-screen</i> e schimbata la 700px.</p>
+                        <button class="btn btn-light shadow-sm">Apasa Pentru Nimic</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     </main>
     <%- include("../fragmente/footer.ejs")%>

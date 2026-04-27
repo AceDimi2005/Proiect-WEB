@@ -1,0 +1,21 @@
+{
+  "descriere": "Set de imagini preluate din Lorem Picsum pentru galeria dinamica (exemplu)",
+  "cale_galerie": "extern",
+  "imagini": [
+    { "titlu": "Rig de gaming 1", "text_descriere": "PC de gaming - setup 1", "alt": "gaming rig 1", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1011/1200/800" },
+    { "titlu": "Rig de gaming 2", "text_descriere": "PC de gaming - setup 2", "alt": "gaming rig 2", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1012/1200/800" },
+    { "titlu": "Tastatura mecanica", "text_descriere": "Tastatura RGB pentru gaming", "alt": "tastatura mecanica", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1013/1200/800" },
+    { "titlu": "Mouse de gaming", "text_descriere": "Mouse ergonomic pentru jocuri", "alt": "mouse gaming", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1014/1200/800" },
+    { "titlu": "Monitor curbat", "text_descriere": "Monitor curbat widescreen", "alt": "monitor curbat", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1015/1200/800" },
+    { "titlu": "Interior carcasa", "text_descriere": "Interior iluminat RGB", "alt": "interior carcasa", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1016/1200/800" },
+    { "titlu": "Placa video", "text_descriere": "Placa video high-end", "alt": "placa video", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1018/1200/800" },
+    { "titlu": "Laptop de gaming", "text_descriere": "Laptop pentru gaming performanta", "alt": "laptop gaming", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1020/1200/800" },
+    { "titlu": "Setup birou", "text_descriere": "Setup ergonomic cu periferice", "alt": "setup birou", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1021/1200/800" },
+    { "titlu": "Accesorii RGB", "text_descriere": "Banda RGB si accesorii", "alt": "accesorii rgb", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1024/1200/800" },
+    { "titlu": "Rack componente", "text_descriere": "Componente pe masa de lucru", "alt": "rack componente", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1025/1200/800" },
+    { "titlu": "Scene de joc", "text_descriere": "Captura de joc cu setup", "alt": "scene joc", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1027/1200/800" },
+    { "titlu": "Desktop minimalist", "text_descriere": "Desktop curat si performant", "alt": "desktop minimalist", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1033/1200/800" },
+    { "titlu": "Conectica", "text_descriere": "Cabluri gestionate", "alt": "cabluri gestionate", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1035/1200/800" },
+    { "titlu": "Close-up componenta", "text_descriere": "Detaliu componenta PC", "alt": "close-up componenta", "autor": "Lorem Picsum", "credit": "Lorem Picsum", "licenta": "free-to-use", "sursa": "https://picsum.photos", "url": "https://picsum.photos/id/1037/1200/800" }
+  ]
+}

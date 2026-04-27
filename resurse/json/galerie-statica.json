@@ -1,0 +1,143 @@
+{
+  "cale_galerie": "resurse/imagini/poze",
+  "imagini": [
+    {
+      "cale_fisier": "anthony-roberts-5WJhuXkqCkc-unsplash.jpg",
+      "titlu": "Carcasa PC cu iluminare albastra",
+      "alt": "Carcasa desktop cu panou lateral transparent si iluminare albastra",
+      "text_descriere": "Sistem desktop compact, vazut frontal, cu componentele interne accentuate de lumina albastra.",
+      "luni": ["martie", "aprilie", "mai", "iunie"],
+      "autor": "Anthony Roberts",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "artin-bakhan-SqLyNHbsLKQ-unsplash.jpg",
+      "titlu": "Laptop de gaming pe birou",
+      "alt": "Laptop deschis pe birou langa un monitor secundar si componente de lucru",
+      "text_descriere": "Laptop subtire folosit intr-un setup de lucru si gaming, surprins alaturi de un monitor mare.",
+      "luni": ["aprilie", "mai", "iunie", "iulie"],
+      "autor": "Artin Bakhan",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "ella-don-Ie9BekWw_Uk-unsplash.jpg",
+      "titlu": "Setup de gaming cu monitor si PC",
+      "alt": "Birou de gaming cu monitor, desktop iluminat RGB si periferice",
+      "text_descriere": "Setup complet de gaming, cu monitor, carcasa RGB si accesorii colorate pe birou.",
+      "luni": ["aprilie", "mai", "septembrie"],
+      "autor": "Ella Don",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "harshit-suryawanshi-H9JMjJlgZrw-unsplash.jpg",
+      "titlu": "Laptop de gaming high-end",
+      "alt": "Laptop de gaming deschis, cu iluminare RGB si design agresiv",
+      "text_descriere": "Laptop de gaming performant, surprins deschis, cu iluminare RGB si un design modern.",
+      "luni": ["ianuarie", "februarie", "martie", "aprilie"],
+      "autor": "Harshit Suryawanshi",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "hudson-mcnamara-nkVlp_owMks-unsplash.jpg",
+      "titlu": "Carcasa PC compacta",
+      "alt": "Carcasa desktop compacta cu panou lateral transparent si lumini reci",
+      "text_descriere": "Sistem desktop compact fotografiat din lateral, cu componentele interne vizibile prin sticla carcasei.",
+      "luni": ["aprilie", "august", "septembrie"],
+      "autor": "Hudson Mcnamara",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "olivier-collet-JMwCe3w7qKk-unsplash.jpg",
+      "titlu": "Placa de baza si procesor",
+      "alt": "Interiorul unui PC cu procesor si placa de baza vizibile, vazut de sus",
+      "text_descriere": "Vedere de sus a interiorului unui PC, cu procesorul si placa de baza in prim-plan, evidentiind detaliile componentelor.",
+      "luni": ["aprilie", "octombrie", "noiembrie"],
+      "autor": "Olivier Collet",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "jonathan-arbely-VRjVFTYPjyc-unsplash.jpg",
+      "titlu": "PC open-frame cu ventilatoare RGB",
+      "alt": "Carcasa PC deschisa cu ventilatoare RGB si racire pe apa",
+      "text_descriere": "Sistem open-frame expus, cu ventilatoare iluminate si rezervor de racire pe apa.",
+      "luni": ["martie", "aprilie", "mai", "iunie"],
+      "autor": "Jonathan Arbely",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "gaming-computers-las-vegas-ccby2.jpg",
+      "titlu": "Stand cu sisteme de gaming RGB",
+      "alt": "Mai multe carcase de gaming expuse la un stand, cu lumini RGB",
+      "text_descriere": "Trei configuratii de gaming expuse la un targ, fiecare cu accent puternic pe iluminarea RGB.",
+      "luni": ["aprilie", "mai", "iunie", "iulie"],
+      "autor": "Notdjey",
+      "credit": "Notdjey, via Wikimedia Commons",
+      "licenta": "CC BY 2.0",
+      "sursa": "https://commons.wikimedia.org/wiki/File:Gaming_computers_(1).jpg",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "bhautik-patel-GYj9ts-qvlQ-unsplash.jpg",
+      "titlu": "Procesor AMD Ryzen montat pe placa",
+      "alt": "Procesor AMD Ryzen montat pe placa de baza, in prim-plan",
+      "text_descriere": "Macro al procesorului AMD instalat pe placa de baza, cu detalii clare ale socket-ului.",
+      "luni": ["aprilie", "mai", "iunie", "octombrie"],
+      "autor": "Bhautik Patel",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "joseph-greve-BPJKc4r7_eo-unsplash.jpg",
+      "titlu": "Cooler Be Quiet si placa video",
+      "alt": "Interior de PC cu cooler Be Quiet, memorie RAM si placa video",
+      "text_descriere": "Carcasa open-view cu racire aeriana masiva, memorie RAM accentuata si placa video vizibila.",
+      "luni": ["aprilie", "iulie", "august", "septembrie"],
+      "autor": "Joseph Greve",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "olivier-collet-VDGBFiaM6Cs-unsplash.jpg",
+      "titlu": "Carcasa alba cu ventilatoare frontale",
+      "alt": "Sistem PC alb cu ventilatoare frontale iluminate si panou de sticla",
+      "text_descriere": "Sistem desktop alb, cu ventilatoare mari in fata si componente RGB in interior.",
+      "luni": ["aprilie", "mai", "septembrie", "octombrie"],
+      "autor": "Olivier Collet",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "pakata-goh-RDolnHtjVCY-unsplash.jpg",
+      "titlu": "Laptop pentru programare",
+      "alt": "Laptop deschis cu editor de cod pe ecran, tinut in maini",
+      "text_descriere": "Laptop subtire folosit pentru programare, afisand un editor de cod pe ecran.",
+      "luni": ["februarie", "martie", "aprilie", "mai"],
+      "autor": "Pakata Goh",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "patrick-pahlke-VmyBUO2Q0r0-unsplash.jpg",
+      "titlu": "Cooler pe procesor intr-un PC atent cablat",
+      "alt": "Interior de PC cu cooler mare pe procesor si cabluri organizate",
+      "text_descriere": "Interior de carcasa aranjat curat, cu cooler mare pe procesor si cabluri bine trase.",
+      "luni": ["aprilie", "mai", "iunie", "noiembrie"],
+      "autor": "Patrick Pahlke",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "setup-mare.PNG",
+      "titlu": "Sistem alb cu racire custom",
+      "alt": "Carcasa PC alba cu racire custom si ventilatoare RGB albe",
+      "text_descriere": "Sistem high-end cu loop de racire custom si ventilatoare albe iluminate uniform.",
+      "luni": ["ianuarie", "aprilie", "septembrie", "decembrie"],
+      "autor": "Echipa TechForge",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "harta-zone-techforge.png",
+      "titlu": "Harta zonelor TechForge",
+      "alt": "Schema zonelor principale din showroom-ul TechForge",
+      "text_descriere": "Element informativ care leaga galeria de structura showroom-ului.",
+      "luni": ["aprilie", "mai", "iunie", "iulie"],
+      "autor": "Echipa TechForge",
+      "galerie-animata": true
+    }
+  ]
+}
