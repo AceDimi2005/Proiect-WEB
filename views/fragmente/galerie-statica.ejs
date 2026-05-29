@@ -22,18 +22,6 @@
                         <figcaption>
                             <span class="titlu-imagine"><%= imagine.titlu %></span>
                             <span class="descriere-imagine"><%= imagine.text_descriere %></span>
-                            <% if (imagine.autor) { %>
-                                <span class="autor-imagine">Foto: <%= imagine.autor %></span>
-                            <% } %>
-                            <% if (imagine.credit) { %>
-                                <span class="credit-imagine">Credit: <%= imagine.credit %></span>
-                            <% } %>
-                            <% if (imagine.licenta) { %>
-                                <span class="licenta-imagine">Licenta: <%= imagine.licenta %></span>
-                            <% } %>
-                            <% if (imagine.sursa) { %>
-                                <span class="sursa-imagine">Sursa: <%= imagine.sursa %></span>
-                            <% } %>
                         </figcaption>
                     </figure>
                 <% } else { %>

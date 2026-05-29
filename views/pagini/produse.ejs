@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Produse TechForge</title>
+    <meta name="description" content="Lista de produse TechForge cu filtre, sortare si calculare pentru PC-uri si laptopuri." />
+    <meta name="keywords" content="produse techforge, pc gaming, pc birou, workstation, laptopuri, filtrare produse, sortare produse" />
+    <%- include("../fragmente/head.ejs") %>
+    <link rel="stylesheet" href="/resurse/css/produse.css" />
+    <link rel="stylesheet" href="/resurse/css/oferte.css" />
+    <link rel="stylesheet" href="/resurse/css/comparare.css" />
+    <script src="/resurse/js/filtrare-produse.js" defer></script>
+    <script src="/resurse/js/comparare-produse.js" defer></script>
+</head>
+
+<body id="top">
+    <%- include("../fragmente/header.ejs") %>
+
+    <main class="pagina-produse">
+        <section class="intro-produse">
+            <h2>Produse TechForge</h2>
+            <% if (categorieSelectata) { %>
+                <p>Categoria selectată din meniu: <strong><%= categorieSelectata.eticheta %></strong></p>
+            <% } else { %>
+                <p>Toate produsele disponibile pentru configurarea unui setup complet.</p>
+            <% } %>
+        </section>
+
+        <section id="filtre-produse" aria-labelledby="titlu-filtre">
+            <h3 id="titlu-filtre">Filtre</h3>
+            <p id="mesaj-validare" class="mesaj-validare" aria-live="polite"></p>
+
+            <div class="row g-3 align-items-start">
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="control-filtru h-100">
+                    <label for="inp-nume" class="form-label">Nume produs</label>
+                    <input type="text" class="form-control form-control-sm" id="inp-nume" placeholder="ex: RTX, laptop, router" />
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="control-filtru h-100">
+                    <label for="inp-pret" class="form-label">Preț maxim</label>
+                    <div class="range-cu-valori">
+                        <span class="small text-body-secondary"><%= optiuniFiltre.pretMin %></span>
+                        <input
+                            type="range"
+                            class="form-range"
+                            id="inp-pret"
+                            min="<%= optiuniFiltre.pretMin %>"
+                            max="<%= optiuniFiltre.pretMax %>"
+                            value="<%= optiuniFiltre.pretMax %>"
+                        />
+                        <span class="small text-body-secondary"><%= optiuniFiltre.pretMax %> (<span id="valoare-pret"><%= optiuniFiltre.pretMax %></span>)</span>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="control-filtru h-100">
+                    <label for="inp-brand" class="form-label">Brand</label>
+                    <input list="lista-branduri" class="form-control form-control-sm" id="inp-brand" placeholder="oricare" />
+                    <datalist id="lista-branduri">
+                        <% for (const brand of optiuniFiltre.branduri) { %>
+                            <option value="<%= brand %>"></option>
+                        <% } %>
+                    </datalist>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-xl-3">
+                    <fieldset class="control-filtru grup-radio h-100">
+                        <legend class="form-label">Segment</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="segment" id="segment-oricare" value="" checked />
+                            <label class="form-check-label" for="segment-oricare">Oricare</label>
+                        </div>
+                        <% for (let i = 0; i < optiuniFiltre.segmente.length; i++) { const segment = optiuniFiltre.segmente[i]; %>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="segment" id="segment-<%= i %>" value="<%= segment.valoare %>" />
+                                <label class="form-check-label" for="segment-<%= i %>"><%= segment.eticheta %></label>
+                            </div>
+                        <% } %>
+                    </fieldset>
+                </div>
+
+                <div class="col-12 col-xl-6">
+                    <fieldset class="control-filtru grup-checkbox h-100">
+                        <legend class="form-label">Conectivitate</legend>
+                        <div class="d-flex flex-wrap gap-2">
+                            <% for (let i = 0; i < optiuniFiltre.conectivitati.length; i++) { const conexiune = optiuniFiltre.conectivitati[i]; %>
+                                <input class="btn-check filtru-conectivitate" type="checkbox" id="conn-<%= i %>" value="<%= conexiune.valoare %>" checked autocomplete="off" />
+                                <label class="btn btn-outline-secondary btn-sm" for="conn-<%= i %>"><%= conexiune.eticheta %></label>
+                            <% } %>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="col-12 col-xl-6">
+                    <div class="control-filtru h-100">
+                        <div class="form-floating" id="floating-cuvinte">
+                            <textarea class="form-control" id="txt-cuvinte" placeholder="silentios, gaming, portabil" style="height: 7rem"></textarea>
+                            <label for="txt-cuvinte">Cuvinte în descriere</label>
+                        </div>
+                        <div class="invalid-feedback">Cuvintele cheie se scriu separate prin virgula, fara alte simboluri.</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="control-filtru h-100">
+                    <label for="sel-tip" class="form-label">Tip produs</label>
+                    <select id="sel-tip" class="form-select form-select-sm">
+                        <option value="">Oricare</option>
+                        <% for (const tip of optiuniFiltre.tipuriProdus) { %>
+                            <option value="<%= tip.valoare %>"><%= tip.eticheta %></option>
+                        <% } %>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="control-filtru h-100">
+                    <label for="sel-culoare" class="form-label">Culoare</label>
+                    <select id="sel-culoare" class="form-select form-select-sm" multiple size="<%= Math.min(Math.max(optiuniFiltre.culori.length, 2), 5) %>">
+                        <% for (const culoare of optiuniFiltre.culori) { %>
+                            <option value="<%= culoare.valoare %>" selected><%= culoare.eticheta %></option>
+                        <% } %>
+                    </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actiuni-produse">
+                <button type="button" id="btn-filtrare" class="btn btn-primary btn-sm d-inline-flex align-items-center gap-1" title="filtreaza">
+                    <i class="bi bi-funnel-fill" aria-hidden="true"></i>
+                    <span class="d-none d-sm-inline">filtreaza</span>
+                </button>
+                <button type="button" id="btn-sort-asc" class="btn btn-secondary btn-sm d-inline-flex align-items-center gap-1" title="sortează ascendent">
+                    <i class="bi bi-sort-up" aria-hidden="true"></i>
+                    <span class="d-none d-sm-inline">sortează ascendent</span>
+                </button>
+                <button type="button" id="btn-sort-desc" class="btn btn-secondary btn-sm d-inline-flex align-items-center gap-1" title="sortează descendent">
+                    <i class="bi bi-sort-down" aria-hidden="true"></i>
+                    <span class="d-none d-sm-inline">sortează descendent</span>
+                </button>
+                <button type="button" id="btn-calculare" class="btn btn-outline-primary btn-sm d-inline-flex align-items-center gap-1" title="calculează media">
+                    <i class="bi bi-calculator" aria-hidden="true"></i>
+                    <span class="d-none d-sm-inline">calculează media</span>
+                </button>
+                <button type="button" id="btn-resetare" class="btn btn-outline-secondary btn-sm d-inline-flex align-items-center gap-1" title="resetează filtrele">
+                    <i class="bi bi-arrow-clockwise" aria-hidden="true"></i>
+                    <span class="d-none d-sm-inline">resetează filtrele</span>
+                </button>
+            </div>
+        </section>
+
+        <section aria-labelledby="titlu-lista-produse">
+            <div class="antet-lista-produse">
+                <h3 id="titlu-lista-produse">Lista produselor</h3>
+                <p id="numar-produse" aria-live="polite"><%= produse.length %> produse afișate</p>
+            </div>
+
+            <% if (typeof ofertaCurenta !== "undefined" && ofertaCurenta) { %>
+                <p class="nota-oferta-produse">
+                    Oferta activă: <strong><%= ofertaCurenta.reducere %>% reducere</strong> la
+                    <strong><%= ofertaCurenta.categorieLabel %></strong>.
+                </p>
+            <% } %>
+
+            <div id="lista-produse">
+                <% for (let i = 0; i < produse.length; i++) { const produs = produse[i]; %>
+                    <article
+                        id="ent<%= produs.id %>"
+                        class="produs <%= produs.categorie %> <%= produs.categorieClasa %>"
+                        data-id="<%= produs.id %>"
+                        data-order="<%= i %>"
+                        data-nume="<%= produs.nume %>"
+                        data-descriere="<%= produs.descriere %>"
+                        data-pret="<%= produs.pret %>"
+                        data-brand="<%= produs.brand %>"
+                        data-segment="<%= produs.segment %>"
+                        data-tip-produs="<%= produs.tipProdus %>"
+                        data-culoare="<%= produs.culoare %>"
+                        data-conectivitate="<%= produs.conectivitate.join('|') %>"
+                        data-nr-conectivitate="<%= produs.nrConectivitate %>"
+                    >
+                        <h4><a href="/produs/<%= produs.id %>"><%= produs.nume %></a></h4>
+
+                        <div class="continut-produs">
+                            <div class="date-produs">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Preț</th>
+                                            <th>Culoare</th>
+                                            <th>Conectivitate</th>
+                                            <th>Data adăugării</th>
+                                            <th>În stoc</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <% if (produs.areOferta) { %>
+                                                    <span class="pret-oferta">
+                                                        <del><%= produs.pretVechiAfisat %></del>
+                                                        <strong><%= produs.pretRedusAfisat %></strong>
+                                                        <span class="badge-reducere">-<%= produs.reducereOferta %>%</span>
+                                                    </span>
+                                                <% } else { %>
+                                                    <%= produs.pretAfisat %>
+                                                <% } %>
+                                            </td>
+                                            <td><%= produs.culoareLabel %></td>
+                                            <td><%= produs.conectivitateText %></td>
+                                            <td><time datetime="<%= produs.dataAdaugareIso %>"><%= produs.dataAdaugareText %></time></td>
+                                            <td><%= produs.inStocText %></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p class="descriere-produs"><%= produs.descriere %></p>
+                                <p class="categorie-produs">Categoria: <strong><%= produs.categorieLabel %></strong></p>
+                                <button
+                                    type="button"
+                                    class="btn-compara"
+                                    data-id="<%= produs.id %>"
+                                    data-nume="<%= produs.nume %>"
+                                    data-imagine="<%= produs.imagine %>"
+                                    data-categorie="<%= produs.categorieLabel %>"
+                                    data-tip="<%= produs.tipProdusLabel %>"
+                                    data-segment="<%= produs.segmentLabel %>"
+                                    data-brand="<%= produs.brand %>"
+                                    data-pret="<%= produs.pretAfisat %>"
+                                    data-greutate="<%= produs.greutateG %> g"
+                                    data-garantie="<%= produs.garantieLuni %> luni"
+                                    data-culoare="<%= produs.culoareLabel %>"
+                                    data-conectivitate="<%= produs.conectivitateText %>"
+                                    data-stoc="<%= produs.inStocText %>"
+                                    data-data-adaugare="<%= produs.dataAdaugareText %>"
+                                    data-specificatii="<%= produs.specificatii %>"
+                                >compară</button>
+                            </div>
+
+                            <a class="imagine-produs" href="/produs/<%= produs.id %>">
+                                <img src="<%= produs.imagine %>" alt="Imagine pentru <%= produs.nume %>" />
+                            </a>
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer.ejs") %>
+</body>
+</html>

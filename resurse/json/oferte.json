@@ -1,0 +1,40 @@
+{
+    "oferte": [
+        {
+            "categorie": "pc_birou",
+            "data-incepere": "2026-05-29T18:25:05.200Z",
+            "data-finalizare": "2026-05-29T18:27:05.200Z",
+            "reducere": 20
+        },
+        {
+            "categorie": "pc_gaming",
+            "data-incepere": "2026-05-29T18:23:05.196Z",
+            "data-finalizare": "2026-05-29T18:25:05.196Z",
+            "reducere": 5
+        },
+        {
+            "categorie": "laptop_gaming",
+            "data-incepere": "2026-05-29T18:21:05.191Z",
+            "data-finalizare": "2026-05-29T18:23:05.191Z",
+            "reducere": 5
+        },
+        {
+            "categorie": "pc_workstation",
+            "data-incepere": "2026-05-29T18:19:05.184Z",
+            "data-finalizare": "2026-05-29T18:21:05.184Z",
+            "reducere": 40
+        },
+        {
+            "categorie": "laptop_gaming",
+            "data-incepere": "2026-05-29T18:17:05.181Z",
+            "data-finalizare": "2026-05-29T18:19:05.181Z",
+            "reducere": 5
+        },
+        {
+            "categorie": "pc_workstation",
+            "data-incepere": "2026-05-29T18:15:05.174Z",
+            "data-finalizare": "2026-05-29T18:17:05.174Z",
+            "reducere": 15
+        }
+    ]
+}

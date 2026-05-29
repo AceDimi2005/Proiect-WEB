@@ -1,0 +1,90 @@
+.panou-oferta {
+    margin: 0.9rem 0;
+    padding: 0.85rem 1rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 0.6rem;
+    background: color-mix(in srgb, var(--color-highlight) 34%, #fff 66%);
+    box-shadow: 0 10px 18px rgb(13 34 56 / 0.16);
+}
+
+.panou-oferta .eticheta-oferta {
+    margin: 0 0 0.25rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.panou-oferta h3 {
+    margin: 0 0 0.35rem;
+}
+
+.panou-oferta p:last-child {
+    margin-bottom: 0;
+}
+
+#timer-oferta {
+    display: inline-block;
+    min-width: 5.2rem;
+    padding: 0.12rem 0.4rem;
+    border-radius: 0.35rem;
+    color: #fff;
+    background: var(--color-primary);
+    text-align: center;
+}
+
+.panou-oferta.oferta-urgent {
+    border-color: #a83232;
+    background: #ffe8e8;
+}
+
+.panou-oferta.oferta-urgent #timer-oferta {
+    background: #a83232;
+    animation: pulseaza-oferta 0.55s ease-in-out infinite alternate;
+}
+
+.nota-oferta-produse {
+    margin: 0 0 0.8rem;
+    padding: 0.55rem 0.7rem;
+    border-left: 4px solid var(--color-accent);
+    background: color-mix(in srgb, var(--color-highlight) 22%, #fff 78%);
+}
+
+.pret-oferta {
+    display: grid;
+    gap: 0.18rem;
+}
+
+.pret-oferta del {
+    color: #7a1f1f;
+}
+
+.pret-oferta strong {
+    color: var(--color-accent);
+}
+
+.badge-reducere {
+    display: inline-block;
+    width: max-content;
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.35rem;
+    color: #fff;
+    background: var(--color-primary);
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+@keyframes pulseaza-oferta {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.06);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .panou-oferta.oferta-urgent #timer-oferta {
+        animation: none;
+    }
+}

@@ -103,6 +103,10 @@ __KEYFRAMES__
 }
 
 @media screen and (max-width: 700px) {
+    #galerie-animata .pista-galerie-animata {
+        animation: none;
+    }
+
     #galerie-animata .fereastra-galerie-animata {
         height: min(72vw, 18rem);
     }

@@ -1,10 +1,17 @@
 <div id="print-watermark" aria-hidden="true">Pirvanescu Dimitrie-Alexandru</div>
 
-<header>
-    <h1>TechForge</h1>
-    <img src="/resurse/imagini/sigla.png" alt="Sigla TechForge" />
+	<header>
+	    <h1>TechForge</h1>
+	    <img src="/resurse/imagini/sigla.png" alt="Sigla TechForge" />
+	    <div class="form-check form-switch comutator-tema">
+	        <input class="form-check-input" type="checkbox" role="switch" id="switch-tema" aria-label="Schimba tema site-ului" />
+	        <label class="form-check-label" for="switch-tema">
+	            <i class="bi bi-sun-fill icon-tema icon-tema-light" aria-hidden="true"></i>
+	            <i class="bi bi-moon-stars-fill icon-tema icon-tema-dark" aria-hidden="true"></i>
+	        </label>
+	    </div>
 
-    <nav class="site-nav" aria-label="Meniu principal">
+	    <nav class="site-nav" aria-label="Meniu principal">
         <input type="checkbox" id="ch-menu" aria-label="Deschide sau inchide meniul" />
         <label id="hamburger" for="ch-menu" aria-hidden="true">
             <i class="fa-solid fa-bars"></i>
@@ -43,9 +50,12 @@
                 </a>
                 <ul class="submenu">
                     <li><a href="/produse">Toate produsele</a></li>
-                    <li><a href="/produse?categorie=componente-pc">Componente PC</a></li>
-                    <li><a href="/produse?categorie=laptopuri">Laptopuri si sisteme</a></li>
-                    <li><a href="/produse?categorie=periferice">Periferice</a></li>
+                    <li><a href="/seturi">Seturi de produse</a></li>
+                    <% if (typeof categoriiProduse !== "undefined") { %>
+                        <% for (const categorie of categoriiProduse) { %>
+                            <li><a href="<%= categorie.url %>"><%= categorie.eticheta %></a></li>
+                        <% } %>
+                    <% } %>
                 </ul>
             </li>
 

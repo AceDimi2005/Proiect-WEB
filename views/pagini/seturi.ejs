@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Seturi de produse TechForge</title>
+    <meta name="description" content="Seturi TechForge de PC-uri si laptopuri, cu pret calculat automat si reducere in functie de numarul produselor." />
+    <meta name="keywords" content="seturi techforge, seturi pc, seturi laptopuri, pachet gaming, pachet business" />
+    <%- include("../fragmente/head.ejs") %>
+    <link rel="stylesheet" href="/resurse/css/produse.css" />
+</head>
+
+<body id="top">
+    <%- include("../fragmente/header.ejs") %>
+
+    <main class="pagina-seturi">
+        <section class="intro-produse">
+            <h2>Seturi de produse</h2>
+            <p>Pachete alcătuite din PC-uri și laptopuri compatibile pentru scenarii de lucru, gaming sau creație.</p>
+        </section>
+
+        <section aria-labelledby="titlu-seturi">
+            <h3 id="titlu-seturi">Seturi disponibile</h3>
+
+            <div class="lista-seturi">
+                <% for (const set of seturi) { %>
+                    <article class="set-produse" id="set-<%= set.id %>">
+                        <header class="antet-set">
+                            <div>
+                                <h4><%= set.numeSet %></h4>
+                                <p><%= set.descriereSet %></p>
+                            </div>
+                            <div class="pret-set">
+                                <span><%= set.numarProduse %> produse</span>
+                                <del><%= set.sumaPreturiAfisata %></del>
+                                <strong><%= set.pretFinalAfisat %></strong>
+                                <span class="badge-reducere">-<%= set.reducereSet %>%</span>
+                            </div>
+                        </header>
+
+                        <div class="produse-set">
+                            <% for (const produs of set.produse) { %>
+                                <a class="produs-set-link" href="/produs/<%= produs.id %>">
+                                    <img src="<%= produs.imagine %>" alt="Imagine pentru <%= produs.nume %>" />
+                                    <span><%= produs.nume %></span>
+                                </a>
+                            <% } %>
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer.ejs") %>
+</body>
+</html>

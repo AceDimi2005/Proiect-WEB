@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title><%= produs.nume %> - TechForge</title>
+    <meta name="description" content="<%= produs.descriere %>" />
+    <meta name="keywords" content="produs techforge, <%= produs.brand %>, <%= produs.categorieLabel %>, <%= produs.tipProdusLabel %>" />
+    <%- include("../fragmente/head.ejs") %>
+    <link rel="stylesheet" href="/resurse/css/produse.css" />
+    <link rel="stylesheet" href="/resurse/css/comparare.css" />
+    <script src="/resurse/js/comparare-produse.js" defer></script>
+</head>
+
+<body id="top">
+    <%- include("../fragmente/header.ejs") %>
+
+    <main class="pagina-produs">
+        <article class="detaliu-produs <%= produs.categorie %> <%= produs.categorieClasa %>">
+            <header class="antet-produs-unic">
+                <div>
+                    <p class="breadcrumb-produse"><a href="/produse?categorie=<%= produs.categorie %>"><%= produs.categorieLabel %></a></p>
+                    <h2><%= produs.nume %></h2>
+                    <p><%= produs.descriere %></p>
+                    <button
+                        type="button"
+                        class="btn-compara"
+                        data-id="<%= produs.id %>"
+                        data-nume="<%= produs.nume %>"
+                        data-imagine="<%= produs.imagine %>"
+                        data-categorie="<%= produs.categorieLabel %>"
+                        data-tip="<%= produs.tipProdusLabel %>"
+                        data-segment="<%= produs.segmentLabel %>"
+                        data-brand="<%= produs.brand %>"
+                        data-pret="<%= produs.pretAfisat %>"
+                        data-greutate="<%= produs.greutateG %> g"
+                        data-garantie="<%= produs.garantieLuni %> luni"
+                        data-culoare="<%= produs.culoareLabel %>"
+                        data-conectivitate="<%= produs.conectivitateText %>"
+                        data-stoc="<%= produs.inStocText %>"
+                        data-data-adaugare="<%= produs.dataAdaugareText %>"
+                        data-specificatii="<%= produs.specificatii %>"
+                    >compară</button>
+                </div>
+                <img src="<%= produs.imagine %>" alt="Imagine pentru <%= produs.nume %>" />
+            </header>
+
+            <section aria-labelledby="titlu-detalii-produs">
+                <h3 id="titlu-detalii-produs">Detalii complete</h3>
+                <div class="tabel-scroll">
+                    <table class="tabel-produs-unic">
+                        <tbody>
+                            <tr>
+                                <th>Identificator</th>
+                                <td><%= produs.id %></td>
+                            </tr>
+                            <tr>
+                                <th>Nume</th>
+                                <td><%= produs.nume %></td>
+                            </tr>
+                            <tr>
+                                <th>Categorie mare</th>
+                                <td><%= produs.categorieLabel %></td>
+                            </tr>
+                            <tr>
+                                <th>Tip produs</th>
+                                <td><%= produs.tipProdusLabel %></td>
+                            </tr>
+                            <tr>
+                                <th>Segment</th>
+                                <td><%= produs.segmentLabel %></td>
+                            </tr>
+                            <tr>
+                                <th>Brand</th>
+                                <td><%= produs.brand %></td>
+                            </tr>
+                            <tr>
+                                <th>Preț</th>
+                                <td><%= produs.pretAfisat %></td>
+                            </tr>
+                            <tr>
+                                <th>Greutate</th>
+                                <td><%= produs.greutateG %> g</td>
+                            </tr>
+                            <tr>
+                                <th>Garanție</th>
+                                <td><%= produs.garantieLuni %> luni</td>
+                            </tr>
+                            <tr>
+                                <th>Data intrării în ofertă</th>
+                                <td><time datetime="<%= produs.dataAdaugareIso %>"><%= produs.dataAdaugareText %></time></td>
+                            </tr>
+                            <tr>
+                                <th>Culoare</th>
+                                <td><%= produs.culoareLabel %></td>
+                            </tr>
+                            <tr>
+                                <th>Conectivitate</th>
+                                <td><%= produs.conectivitateText %></td>
+                            </tr>
+                            <tr>
+                                <th>În stoc</th>
+                                <td><%= produs.inStocText %></td>
+                            </tr>
+                            <tr>
+                                <th>Specificații</th>
+                                <td><%= produs.specificatii %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <% if (typeof seturiProdus !== "undefined" && seturiProdus.length) { %>
+                <section aria-labelledby="titlu-seturi-produs">
+                    <h3 id="titlu-seturi-produs">Seturi care includ acest produs</h3>
+
+                    <div class="lista-seturi lista-seturi-produs">
+                        <% for (const set of seturiProdus) { %>
+                            <article class="set-produse">
+                                <header class="antet-set">
+                                    <div>
+                                        <h4><a href="/seturi#set-<%= set.id %>"><%= set.numeSet %></a></h4>
+                                        <p><%= set.descriereSet %></p>
+                                    </div>
+                                    <div class="pret-set">
+                                        <span><%= set.numarProduse %> produse</span>
+                                        <del><%= set.sumaPreturiAfisata %></del>
+                                        <strong><%= set.pretFinalAfisat %></strong>
+                                        <span class="badge-reducere">-<%= set.reducereSet %>%</span>
+                                    </div>
+                                </header>
+
+                                <div class="produse-set">
+                                    <% for (const produsSet of set.produse) { %>
+                                        <% if (produsSet.id === produs.id) { %>
+                                            <span class="produs-set-link produs-set-curent" aria-current="page">
+                                                <img src="<%= produsSet.imagine %>" alt="Imagine pentru <%= produsSet.nume %>" />
+                                                <span><%= produsSet.nume %></span>
+                                            </span>
+                                        <% } else { %>
+                                            <a class="produs-set-link" href="/produs/<%= produsSet.id %>">
+                                                <img src="<%= produsSet.imagine %>" alt="Imagine pentru <%= produsSet.nume %>" />
+                                                <span><%= produsSet.nume %></span>
+                                            </a>
+                                        <% } %>
+                                    <% } %>
+                                </div>
+                            </article>
+                        <% } %>
+                    </div>
+                </section>
+            <% } %>
+
+            <p><a href="/produse">Înapoi la toate produsele</a></p>
+        </article>
+    </main>
+
+    <%- include("../fragmente/footer.ejs") %>
+</body>
+</html>

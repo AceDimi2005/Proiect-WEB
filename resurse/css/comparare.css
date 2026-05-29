@@ -1,0 +1,107 @@
+.btn-compara,
+#container-comparare button {
+    border: 1px solid color-mix(in srgb, var(--color-primary) 80%, #000 20%);
+    border-radius: 0.4rem;
+    padding: 0.38rem 0.65rem;
+    color: #fff;
+    background: var(--color-primary);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-compara {
+    margin-top: 0.55rem;
+    width: max-content;
+}
+
+.btn-compara:hover,
+.btn-compara:focus-visible,
+#container-comparare button:hover,
+#container-comparare button:focus-visible {
+    background: var(--color-accent);
+}
+
+.btn-compara:disabled,
+.btn-compara.comparare-dezactivata {
+    cursor: not-allowed;
+    opacity: 0.62;
+    background: color-mix(in srgb, var(--color-primary) 58%, #777 42%);
+}
+
+#container-comparare {
+    position: fixed;
+    right: 1.15rem;
+    bottom: 6.6rem;
+    z-index: 1300;
+    width: min(23rem, calc(100vw - 2rem));
+    padding: 0.9rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 0.55rem;
+    color: var(--color-text);
+    background: var(--color-surface);
+    box-shadow: 0 12px 24px rgb(13 34 56 / 0.28);
+}
+
+#container-comparare h3 {
+    margin: 0 0 0.55rem;
+    font-size: 1.05rem;
+}
+
+#container-comparare ul {
+    display: grid;
+    gap: 0.4rem;
+    margin: 0 0 0.65rem;
+    padding: 0;
+    list-style: none;
+}
+
+#container-comparare li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.45rem;
+    align-items: center;
+}
+
+#container-comparare li span {
+    overflow-wrap: anywhere;
+    font-weight: 700;
+}
+
+#container-comparare .btn-sterge-comparare {
+    min-width: 2rem;
+    padding: 0.18rem 0.45rem;
+    background: #a83232;
+}
+
+#btn-afiseaza-comparare {
+    width: 100%;
+}
+
+#tooltip-comparare {
+    position: fixed;
+    z-index: 1400;
+    max-width: 18rem;
+    padding: 0.38rem 0.55rem;
+    border-radius: 0.35rem;
+    color: #fff;
+    background: #0d2238;
+    box-shadow: 0 8px 16px rgb(13 34 56 / 0.22);
+    font-size: 0.88rem;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(0.2rem);
+    transition: opacity 0.14s ease, transform 0.14s ease;
+}
+
+#tooltip-comparare.vizibil {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 700px) {
+    #container-comparare {
+        right: 0.7rem;
+        bottom: 5.6rem;
+    }
+}

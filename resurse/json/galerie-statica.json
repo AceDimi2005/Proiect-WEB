@@ -131,12 +131,39 @@
       "galerie-animata": true
     },
     {
-      "cale_fisier": "harta-zone-techforge.png",
-      "titlu": "Harta zonelor TechForge",
-      "alt": "Schema zonelor principale din showroom-ul TechForge",
-      "text_descriere": "Element informativ care leaga galeria de structura showroom-ului.",
+      "cale_fisier": "laptop-on-a-desk-cc0.jpg",
+      "titlu": "Laptop pe birou de lucru",
+      "alt": "Laptop deschis pe un birou de lucru",
+      "text_descriere": "Laptop folosit intr-o scena de lucru curata, potrivit pentru configuratii mobile si productivitate.",
       "luni": ["aprilie", "mai", "iunie", "iulie"],
-      "autor": "Echipa TechForge",
+      "autor": "Radek Grzybowski",
+      "credit": "Radek Grzybowski, via Wikimedia Commons",
+      "licenta": "CC0 1.0",
+      "sursa": "https://commons.wikimedia.org/wiki/File:Laptop_on_a_desk.jpg",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "rgb-desktop-computer-setup-cc0.jpg",
+      "titlu": "Setup desktop RGB cu monitor si tastatura",
+      "alt": "Setup desktop cu iluminare RGB, monitor si tastatura",
+      "text_descriere": "Statie de lucru moderna cu iluminare RGB, monitor mare si periferice pregatite pentru gaming.",
+      "luni": ["mai", "iunie", "iulie"],
+      "autor": "SankalpSasnur",
+      "credit": "SankalpSasnur, via Wikimedia Commons",
+      "licenta": "CC0 1.0",
+      "sursa": "https://commons.wikimedia.org/wiki/File:RGB_desktop_computer_setup_with_keyboard_and_monitor.jpg",
+      "galerie-animata": true
+    },
+    {
+      "cale_fisier": "two-gaming-pcs-ccby4.jpg",
+      "titlu": "Doua PC-uri de gaming in lucru",
+      "alt": "Doua calculatoare de gaming asamblate pe o masa",
+      "text_descriere": "Doua sisteme de gaming aflate in etapa de asamblare, cu componentele expuse pe masa de lucru.",
+      "luni": ["mai", "august", "septembrie"],
+      "autor": "GalacticCuriosity",
+      "credit": "GalacticCuriosity, via Wikimedia Commons",
+      "licenta": "CC BY 4.0",
+      "sursa": "https://commons.wikimedia.org/wiki/File:Two_gaming_pcs.jpg",
       "galerie-animata": true
     }
   ]

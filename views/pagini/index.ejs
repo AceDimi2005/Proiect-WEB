@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head> 
+<head>
     <title>TechForge</title>
     <meta name="description"
         content="Calculatoare personalizate, componente de ultimă generație și laptopuri performante pentru gaming și birou. Descoperă tehnologia de vârf la TechForge!">
     <meta name="keywords"
         content="magazin IT, componente PC, calculatoare gaming, laptopuri performante, TechForge, PC, sisteme preasamblate, setup gaming, periferice, tehnologie, sisteme custom">
     <%-  include("../fragmente/head.ejs")%>
+    <link rel="stylesheet" href="/resurse/css/oferte.css" />
+    <script src="/resurse/js/oferte.js" defer></script>
 </head>
 
 <body id="top">
     <%-include("../fragmente/header.ejs")%>
-    <main> 
+    <main>
 
         <div id="grid-pagina">
 
             <section id="welcome">
                 <hgroup>
-                    <h2><span id="text" tabindex="0">Bine ați venit<span id="text-reflectat" aria-hidden="true">Bine ați venit</span></span></h2>
+                    <h2><i class="fa-solid fa-microchip icon-static" aria-hidden="true"></i><span id="text" tabindex="0">Bine ați venit<span id="text-reflectat" aria-hidden="true">Bine ați venit</span></span></h2>
                     <p class="subtitlu">Prezentarea magazinului</p>
                 </hgroup>
 
-                <p class="intro"><b>TechForge</b> este <em>magazinul IT</em> unde găsești <em>componente PC</em>,
-                    <em>calculatoare gaming</em>, <em>laptopuri performante</em> și <em>periferice</em> de top.
+                <p class="intro"><b>TechForge</b> este <em>magazinul IT</em> unde găsești <em>PC-uri personalizate</em>,
+                    <em>calculatoare gaming</em>, <em>workstation-uri</em> și <em>laptopuri performante</em>.
                     Descoperiți cele mai noi tehnologii și configurați sistemul perfect pentru nevoile dvs.!</p>
 
                 <div class="intro-oferte">
-                    <div>Componente PC</div>
-                    <div>PC Gaming</div>
-                    <div>Laptopuri</div>
-                    <div>Periferice</div>
-                    <div>Monitoare</div>
+                    <div>PC-uri gaming</div>
+                    <div>PC-uri birou</div>
+                    <div>PC-uri workstation</div>
+                    <div>Laptopuri gaming</div>
+                    <div>Laptopuri business</div>
                 </div>
+
+                <% if (typeof ofertaCurenta !== "undefined" && ofertaCurenta) { %>
+                    <section
+                        id="oferta-curenta"
+                        class="panou-oferta"
+                        data-finalizare="<%= ofertaCurenta.dataFinalizare %>"
+                        data-api-url="/api/oferta-curenta"
+                    >
+                        <p class="eticheta-oferta">Oferta activă</p>
+                        <h3>
+                            <span data-oferta-reducere><%= ofertaCurenta.reducere %></span>% reducere la
+                            <span data-oferta-categorie><%= ofertaCurenta.categorieLabel %></span>
+                        </h3>
+                        <p>Oferta se actualizează automat. Timp rămas:
+                            <strong id="timer-oferta" aria-live="polite">--:--:--</strong>
+                        </p>
+                    </section>
+                <% } %>
+
                 <p class="anunt intro">Fie că doriți un <em>setup gaming</em> complet, <em>sisteme preasamblate</em>
                     pentru birou sau <em>sisteme custom</em> unice, puteți achiziționa produsele atât din showroom-ul
                     nostru, cât și online, cu livrare rapidă prin curier în toată țara.</p>
@@ -204,10 +225,22 @@
                         <p>La începutul fiecărui an vă faceți planuri să vă upgrade-uiți setup-ul. De data aceasta chiar o
                             puteți face! Profitați de reducerile noastre de început de an pentru a vă construi
                             configurația visurilor, fie pentru gaming, productivitate sau creație de conținut.</p>
-                    </article>
-                </section>
+	                    </article>
+	                </section>
 
-                <section id="produse">
+                    <section class="container my-4 p-0">
+                        <div class="card text-bg-primary shadow border-0">
+                            <div class="card-body">
+                                <h3 class="card-title h4">Recomandarea TechForge</h3>
+                                <p class="card-text">
+                                    Configureaza un PC personalizat si primesti consultanta gratuita pentru alegerea componentelor.
+                                </p>
+                                <a href="/produse" class="btn btn-light shadow-sm">Vezi configuratii</a>
+                            </div>
+                        </div>
+                    </section>
+
+	                <section id="produse">
                     <h3>Produsele noastre</h3>
                     <p>Vă oferim o gamă completă de <em>componente PC</em> și sisteme pentru orice buget și necesitate.
                         De la <em>calculatoare gaming</em> de performanță până la <em>laptopuri performante</em> pentru
@@ -225,6 +258,10 @@
                             <li>SSD-uri și HDD-uri</li>
                             <li>Surse și carcase</li>
                         </ul>
+                        <p>Lucrăm cu branduri consacrate precum <a href="https://www.asus.com/ro/" target="_blank"
+                                rel="noopener">ASUS</a> și <a href="https://www.nvidia.com/ro-ro/" target="_blank"
+                                rel="noopener">NVIDIA</a>, astfel încât clienții TechForge să poată alege componente
+                            moderne, compatibile și potrivite pentru configurații performante.</p>
                     </section>
                     <section>
                         <h4>Sisteme și Laptopuri</h4>
@@ -241,6 +278,10 @@
                             <li>Mini PC-uri - compacte și eficiente</li>
                             <li>All-in-One - design minimalist</li>
                         </ul>
+                        <p>În configurațiile recomandate folosim frecvent laptopuri și plăci de bază <a
+                                href="https://rog.asus.com/ro/" target="_blank" rel="noopener">ASUS ROG</a>, alături
+                            de soluții grafice bazate pe tehnologii <a href="https://www.nvidia.com/ro-ro/geforce/"
+                                target="_blank" rel="noopener">GeForce RTX</a>.</p>
                     </section>
 
                     <section>
@@ -285,7 +326,7 @@
                 <hr id="efect-css-stilizare-hr" class="hr-efect-css" />
             </section>
             <section id="evenimente">
-                <h2>Evenimente</h2>
+                <h2><i class="fa-solid fa-gears fa-spin icon-animat" aria-hidden="true"></i> Evenimente</h2>
                 <p>Participă la evenimentele noastre și bucură-te de oferte exclusive!</p>
                 <ul>
                     <li><time datetime="2026-03-15T10:00">15 martie 2026, ora 10:00</time> - <b>LAN Party TechForge</b>
@@ -455,11 +496,12 @@
 
 
 
+    <!--
     <section class="container mt-5 mb-5 p-4 bg-light shadow-sm rounded border border-success">
         <h1 class="text-primary text-center mb-4">Sectiune Testare Bootstrap</h1>
         <h2 class="text-secondary">Culori, Fonturi, Border Radius</h2>
         <p class="lead">Acesta este un test al integrarii Bootstrap si a customizarii variabilelor lui primare prin SASS. S-a schimbat fontul la Exo 2/Trebuchet, culoarea primara <code>$primary</code> spre albastru inchis si culoarea de succes. Rotunjimea (border-radius) de asemenea a fost marita la <kbd>0.85rem</kbd>.</p>
-        
+
         <div class="row gx-3 mt-4">
             <div class="col-md-6 mb-3">
                 <div class="card text-bg-primary h-100 shadow border-0">
@@ -483,6 +525,7 @@
             </div>
         </div>
     </section>
+    -->
 
     </main>
     <%- include("../fragmente/footer.ejs")%>

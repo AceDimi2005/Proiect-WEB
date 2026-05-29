@@ -1,4 +1,8 @@
-
+$techforge-primary: #1f3b5b;
+$techforge-secondary: #0f9d9a;
+$techforge-highlight: #79b6e6;
+$techforge-surface: #f4f8ff;
+$techforge-range-track: #b9d7f0;
 
 @use "bootstrap/scss/bootstrap" with (
   $font-family-base: ('Exo 2', 'Trebuchet MS', sans-serif),
@@ -11,15 +15,24 @@
     xxl: 1400px
   ),
   $border-radius: 0.85rem,
+  $btn-border-radius: 0.6rem,
+  $btn-border-width: 2px,
+  $input-border-radius: 0.55rem,
+  $input-border-width: 2px,
   $h1-font-size: 2.8rem,
   $h2-font-size: 2.2rem,
-  $primary: #1f3b5b,
-  $secondary: #0f9d9a,
-  $success: #79b6e6,
+  $primary: $techforge-primary,
+  $secondary: $techforge-secondary,
+  $success: $techforge-highlight,
   $primary-text-emphasis: #ffffff,
-  $secondary-text-emphasis: #f4f8ff,
-  $btn-color: #f4f8ff,
+  $secondary-text-emphasis: $techforge-surface,
+  $btn-color: $techforge-surface,
   $link-color: #2f5d8a,
+  $form-range-track-height: 0.65rem,
+  $form-range-track-bg: $techforge-range-track,
+  $form-range-thumb-width: 1.5rem,
+  $form-range-thumb-height: 1.5rem,
+  $form-range-thumb-bg: $techforge-secondary,
+  $form-range-thumb-active-bg: $techforge-highlight,
   $enable-shadows: true
 );
-
